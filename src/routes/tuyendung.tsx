@@ -37,15 +37,18 @@ function RecruitPage() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <section className="relative pt-32 pb-20 bg-gradient-hero overflow-hidden">
-        <div className="container mx-auto px-6 text-center max-w-3xl animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-sm text-primary mb-6">
+      <section
+        className="relative pt-40 pb-24 overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(4,14,39,0.7), rgba(4,14,39,0.8)), url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="container mx-auto px-6 text-center max-w-3xl animate-fade-up text-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-sm text-white mb-6 backdrop-blur">
             <Briefcase size={14} /> Cơ hội nghề nghiệp
           </div>
           <h1 className="text-5xl md:text-6xl font-black mb-5">
-            Gia nhập <span className="text-gradient">H2V MEDIA</span>
+            Gia nhập <span className="text-accent">H2V MEDIA</span>
           </h1>
-          <p className="text-lg text-muted-foreground">Cùng chúng tôi tạo nên những nội dung số hàng đầu thế giới.</p>
+          <p className="text-lg text-white/90">Cùng chúng tôi tạo nên những nội dung số hàng đầu thế giới.</p>
         </div>
       </section>
 
