@@ -44,28 +44,28 @@ function HomePage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 opacity-40">
-          <img src={heroImg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+      <section
+        className="relative pt-40 pb-32 overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(4,14,39,0.65), rgba(4,14,39,0.75)), url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-3xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-sm text-primary mb-6">
+          <div className="max-w-3xl animate-fade-up text-white">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-sm text-white mb-6 backdrop-blur">
               <Sparkles size={14} /> Excellence or Nothing
             </div>
+            <h2 className="text-2xl md:text-3xl font-medium mb-2">Chào mừng đến với</h2>
             <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
-              Chào mừng đến với<br />
-              <span className="text-gradient">H2V MEDIA</span>
+              H2V MEDIA
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              Nơi đưa sáng tạo người Việt ra toàn thế giới — Hội tụ Nội dung số, Automation và Affiliate Marketing quốc tế.
+            <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed text-white/90">
+              <strong className="text-2xl block mb-2">Nơi đưa sáng tạo của người Việt ra toàn Thế giới!</strong>
+              Hội tụ Sáng tạo nội dung YouTube, Automation đa nền tảng và Affiliate Marketing quốc tế.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#hst" className="px-7 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:scale-105 transition-smooth inline-flex items-center gap-2">
                 Khám phá dịch vụ <ArrowRight size={18} />
               </a>
-              <a href="#lh" className="px-7 py-3.5 rounded-xl border border-border bg-card/40 backdrop-blur font-semibold hover:bg-card transition-smooth">
+              <a href="#lh" className="px-7 py-3.5 rounded-xl border border-white/40 bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-smooth">
                 Liên hệ ngay
               </a>
             </div>
