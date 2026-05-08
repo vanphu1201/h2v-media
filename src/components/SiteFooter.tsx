@@ -3,37 +3,74 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/40 bg-card/40">
-      <div className="container mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
-        <div>
-          <div className="font-black text-2xl tracking-tight mb-3">
-            <span className="text-gradient">H2V</span> <span>MEDIA</span>
+    <footer className="bg-[#040E27] text-white overflow-hidden relative">
+      {/* Decorative Gradient */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      
+      <div className="container mx-auto px-6 pt-24 pb-12">
+        <div className="grid lg:grid-cols-4 gap-16 mb-20">
+          <div className="lg:col-span-2">
+            <Link to="/" className="flex items-center gap-3 mb-8 group">
+              <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-2xl shadow-glow transition-smooth">H</div>
+              <div className="flex flex-col leading-none">
+                <span className="font-black text-2xl tracking-tighter">H2V <span className="text-primary">MEDIA</span></span>
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Excellence or Nothing</span>
+              </div>
+            </Link>
+            <p className="text-lg text-white/50 leading-relaxed max-w-md font-light mb-8">
+              CÔNG TY CỔ PHẦN CÔNG NGHỆ H2V MEDIA — Nơi sáng tạo nội dung số, tự động hoá và tiếp thị quốc tế hội tụ để kiến tạo những giá trị bền vững.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            CÔNG TY CỔ PHẦN CÔNG NGHỆ H2V MEDIA — Nơi sáng tạo nội dung số, tự động hoá và tiếp thị quốc tế hội tụ.
-          </p>
+          
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-8">Danh mục</h4>
+            <ul className="space-y-4">
+              {[
+                { href: "/#vct", label: "Về chúng tôi" },
+                { href: "/#hst", label: "Hệ sinh thái" },
+                { href: "/#vh", label: "Văn hóa" },
+                { href: "/#lh", label: "Liên hệ" },
+                { to: "/tuyendung", label: "Tuyển dụng" },
+              ].map((link) => (
+                <li key={link.label}>
+                  {link.href ? (
+                    <a href={link.href} className="text-white/60 hover:text-primary transition-smooth font-medium">{link.label}</a>
+                  ) : (
+                    <Link to={link.to!} className="text-white/60 hover:text-primary transition-smooth font-medium">{link.label}</Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-8">Liên hệ</h4>
+            <ul className="space-y-6">
+              <li className="flex gap-4">
+                <MapPin size={18} className="shrink-0 text-primary" />
+                <span className="text-sm text-white/60 leading-relaxed font-light">Toà BS12, The Beverly Solari, Vinhomes Grand Park, TP Thủ Đức, HCM</span>
+              </li>
+              <li className="flex gap-4">
+                <Phone size={18} className="text-primary" />
+                <a href="tel:+84907696177" className="text-white/60 hover:text-primary transition-smooth font-medium">+84 907 696 177</a>
+              </li>
+              <li className="flex gap-4">
+                <Mail size={18} className="text-primary" />
+                <a href="mailto:contact@h2vmedia.com" className="text-white/60 hover:text-primary transition-smooth font-medium">contact@h2vmedia.com</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold mb-3 text-foreground">Danh mục</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><a href="/#vct" className="hover:text-foreground transition-smooth">Về chúng tôi</a></li>
-            <li><a href="/#hst" className="hover:text-foreground transition-smooth">Hệ sinh thái</a></li>
-            <li><a href="/#vh" className="hover:text-foreground transition-smooth">Văn hóa</a></li>
-            <li><a href="/#lh" className="hover:text-foreground transition-smooth">Liên hệ</a></li>
-            <li><Link to="/tuyendung" className="hover:text-foreground transition-smooth">Tuyển dụng</Link></li>
-          </ul>
+        
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/20">
+            © {new Date().getFullYear()} H2V MEDIA — International Digital Excellence
+          </div>
+          <div className="flex gap-8 text-[10px] font-bold tracking-[0.2em] uppercase text-white/20">
+            <a href="#" className="hover:text-white transition-smooth">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-smooth">Terms of Service</a>
+          </div>
         </div>
-        <div>
-          <h4 className="font-semibold mb-3 text-foreground">Liên hệ</h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-primary" /><span>Toà BS12, The Beverly Solari, KĐT Vinhomes Grand Park, P. Long Bình, TP Hồ Chí Minh</span></li>
-            <li className="flex gap-2"><Phone size={16} className="text-primary" /><a href="tel:+84907696177">+84 907 696 177</a></li>
-            <li className="flex gap-2"><Mail size={16} className="text-primary" /><a href="mailto:contact@h2vmedia.com">contact@h2vmedia.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border/40 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} H2V MEDIA. All rights reserved.
       </div>
     </footer>
   );

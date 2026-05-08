@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Youtube, Workflow, Globe, Sparkles, Target, Heart, Zap, Trophy, Rocket, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "@/assets/goda/br.jpg";
 import aboutBg from "@/assets/goda/br2.jpg";
 import cultureBg from "@/assets/goda/br3.jpg";
@@ -36,7 +37,59 @@ const values = [
   { icon: Trophy, title: "Đơn giản mà hiệu quả", desc: "Hãy thành công theo cách đơn giản nhất." },
 ];
 
-const partners = ["YouTube Partner", "Meta Business", "Google Ads", "Amazon Associates", "ClickBank", "TikTok Shop"];
+import ytLogo from "@/assets/partners/youtube.png";
+import metaLogo from "@/assets/partners/meta.png";
+import googleLogo from "@/assets/partners/google_ads.png";
+import amazonLogo from "@/assets/partners/amazon.png";
+import clickbankLogo from "@/assets/partners/clickbank.png";
+import tiktokLogo from "@/assets/partners/tiktok.png";
+
+const partners = [
+  { name: "YouTube Partner", logo: ytLogo },
+  { name: "Meta Business", logo: metaLogo },
+  { name: "Google Ads", logo: googleLogo },
+  { name: "Amazon Associates", logo: amazonLogo },
+  { name: "ClickBank", logo: clickbankLogo },
+  { name: "TikTok Shop", logo: tiktokLogo },
+];
+
+import huanImg from "@/assets/leaders/huan.png";
+import hoangImg from "@/assets/leaders/hoang.png";
+import tuanImg from "@/assets/leaders/tuan.png";
+
+const leadership = [
+  { name: "Nguyễn Văn Huân", role: "Chủ tịch Hội đồng Quản trị", badge: "COB", img: huanImg },
+  { name: "Vũ Việt Hoàng", role: "Giám đốc Công ty", badge: "CEO", img: hoangImg },
+  { name: "Hồ Anh Tuấn", role: "Giám đốc Vận hành", badge: "COO", img: tuanImg },
+];
+
+import { useInView } from "react-intersection-observer";
+
+function Counter({ value, suffix = "" }: { value: string, suffix?: string }) {
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const [count, setCount] = useState(0);
+  const target = parseInt(value);
+
+  useEffect(() => {
+    if (inView) {
+      let start = 0;
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          setCount(target);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [inView, target]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 function HomePage() {
   return (
@@ -44,174 +97,354 @@ function HomePage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section
-        className="relative pt-40 pb-32 overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(4,14,39,0.65), rgba(4,14,39,0.75)), url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="container mx-auto px-6 relative">
-          <div className="max-w-3xl animate-fade-up text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-sm text-white mb-6 backdrop-blur">
-              <Sparkles size={14} /> Excellence or Nothing
-            </div>
-            <h2 className="text-2xl md:text-3xl font-medium mb-2">Chào mừng đến với</h2>
-            <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
-              H2V MEDIA
-            </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed text-white/90">
-              <strong className="text-2xl block mb-2">Nơi đưa sáng tạo của người Việt ra toàn Thế giới!</strong>
-              Hội tụ Sáng tạo nội dung YouTube, Automation đa nền tảng và Affiliate Marketing quốc tế.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#hst" className="px-7 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:scale-105 transition-smooth inline-flex items-center gap-2">
-                Khám phá dịch vụ <ArrowRight size={18} />
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#040E27]">
+        <div 
+          className="absolute inset-0 z-0 opacity-30 scale-105"
+          style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#040E27]/90 via-[#040E27]/60 to-[#040E27] z-10" />
+        
+        <div className="container mx-auto px-6 relative z-20">
+          <div className="max-w-5xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="subtitle text-white/50 mb-8"
+            >
+              H2V Media International
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="text-6xl md:text-[8rem] font-black text-white leading-[0.9] mb-12 tracking-tighter"
+            >
+              Excellence <br /> 
+              <span className="text-gradient italic text-glow">or Nothing.</span>
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl md:text-3xl text-white/60 mb-14 leading-relaxed font-light max-w-3xl"
+            >
+              Nơi đưa sáng tạo của người Việt ra toàn Thế giới thông qua Sáng tạo nội dung, Automation và Affiliate Marketing quốc tế.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap gap-6"
+            >
+              <a href="#hst" className="px-10 py-5 rounded-full bg-primary text-white font-black uppercase tracking-[0.2em] shadow-glow hover:scale-105 transition-smooth flex items-center gap-3">
+                Khám phá dịch vụ <ArrowRight size={20} />
               </a>
-              <a href="#lh" className="px-7 py-3.5 rounded-xl border border-white/40 bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-smooth">
-                Liên hệ ngay
+              <a href="#lh" className="px-10 py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-smooth">
+                Liên hệ hợp tác
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* About */}
-      <section id="vct" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Về chúng tôi</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Doanh nghiệp công nghệ – truyền thông thế hệ mới</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              CÔNG TY CỔ PHẦN CÔNG NGHỆ H2V MEDIA tập trung vào ba trụ cột chiến lược: sáng tạo nội dung số, tự động hoá quy trình và tiếp thị liên kết quốc tế. Chúng tôi đồng hành cùng đối tác kiến tạo những giá trị bền vững trên không gian Internet toàn cầu.
-            </p>
+      <section id="vct" className="section-padding bg-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-40 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
+            <div className="relative">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+              >
+                <span className="subtitle">Our Identity</span>
+                <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-8">
+                  Doanh nghiệp <br />
+                  <span className="text-gradient italic text-glow">Thế hệ mới.</span>
+                </h2>
+                <div className="w-24 h-2 bg-primary rounded-full mb-12" />
+              </motion.div>
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative p-12 rounded-[3.5rem] bg-secondary/30 backdrop-blur-sm border border-white"
+            >
+              <Sparkles className="text-primary/20 absolute -top-6 -right-6" size={80} />
+              <p className="text-2xl text-[#040E27]/80 leading-relaxed font-light italic">
+                "H2V MEDIA tập trung vào ba trụ cột chiến lược: <span className="text-[#040E27] font-bold">sáng tạo nội dung số</span>, <span className="text-[#040E27] font-bold">tự động hoá quy trình</span> và <span className="text-[#040E27] font-bold">tiếp thị liên kết quốc tế</span>."
+              </p>
+              <p className="mt-8 text-muted-foreground leading-relaxed">
+                Chúng tôi không chỉ xây dựng dịch vụ, chúng tôi kiến tạo những giá trị bền vững trên không gian số toàn cầu, mang trí tuệ Việt vươn tầm quốc tế.
+              </p>
+            </motion.div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          
+          <div className="grid md:grid-cols-3 gap-12">
             {[
-              { num: "100+", label: "Dự án triển khai" },
-              { num: "10M+", label: "Lượt tiếp cận hàng tháng" },
-              { num: "20+", label: "Quốc gia & vùng lãnh thổ" },
-            ].map((s) => (
-              <div key={s.label} className="bg-gradient-card border border-border/50 rounded-2xl p-8 text-center shadow-elegant">
-                <div className="text-5xl font-black text-gradient mb-2">{s.num}</div>
-                <div className="text-muted-foreground">{s.label}</div>
-              </div>
+              { num: "100", suffix: "+", label: "Dự án triển khai", icon: Rocket },
+              { num: "10", suffix: "M+", label: "Lượt tiếp cận hàng tháng", icon: Youtube },
+              { num: "20", suffix: "+", label: "Quốc gia vận hành", icon: Globe },
+            ].map((s, i) => (
+              <motion.div 
+                key={s.label}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                className="group relative p-12 rounded-[3.5rem] bg-white border border-border/10 shadow-elegant hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] transition-all duration-500 group-hover:bg-primary group-hover:w-full group-hover:h-full group-hover:rounded-none z-0" />
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-white/20 transition-smooth">
+                    <s.icon size={32} className="text-primary group-hover:text-white transition-smooth" />
+                  </div>
+                  <div className="text-7xl font-black text-[#040E27] mb-4 tracking-tighter group-hover:text-white transition-smooth">
+                    <Counter value={s.num} suffix={s.suffix} />
+                  </div>
+                  <div className="text-muted-foreground font-black uppercase tracking-[0.2em] text-[10px] group-hover:text-white/60 transition-smooth">{s.label}</div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Hệ sinh thái / Services */}
-      <section id="hst" className="py-24 bg-card/30">
+      {/* Đội ngũ lãnh đạo */}
+      <section id="ld" className="section-padding bg-secondary/30 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Hệ sinh thái</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Dịch vụ H2V MEDIA cung cấp</h2>
-            <p className="text-muted-foreground text-lg">Một hệ sinh thái toàn diện — từ ý tưởng, sản xuất đến vận hành & tăng trưởng.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <article key={s.title} className="group bg-gradient-card border border-border/50 rounded-2xl overflow-hidden shadow-elegant hover:shadow-glow transition-smooth">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={s.img} alt={s.title} loading="lazy" width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-smooth" />
-                </div>
-                <div className="p-7">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 shadow-glow">
-                    <s.icon className="text-primary-foreground" size={22} />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-24"
+          >
+            <span className="subtitle">Leadership</span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Ban <span className="text-primary italic">Lãnh Đạo.</span></h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {leadership.map((member, i) => (
+              <motion.div 
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                className="group cursor-pointer"
+              >
+                <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-elegant mb-10">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="absolute bottom-10 left-10 right-10 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                    <p className="text-white/70 text-[10px] font-black uppercase tracking-widest mb-2">{member.badge}</p>
+                    <h4 className="text-2xl font-black text-white">{member.name}</h4>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
-              </article>
+                <div className="px-4 text-center">
+                  <h3 className="text-2xl font-bold mb-2 tracking-tight group-hover:text-primary transition-colors duration-500">{member.name}</h3>
+                  <p className="text-muted-foreground text-[10px] font-black uppercase tracking-widest opacity-60">{member.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hệ sinh thái */}
+      <section id="hst" className="section-padding bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <span className="subtitle">Ecosystem</span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Dịch vụ <span className="text-primary italic">Hợp nhất.</span></h2>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {services.map((s, i) => (
+              <motion.article 
+                key={s.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <div className="aspect-square rounded-[3rem] overflow-hidden mb-10 shadow-elegant border border-transparent group-hover:border-primary/20 transition-all duration-700 group-hover:-translate-y-4">
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                </div>
+                <div className="px-4">
+                  <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:shadow-glow group-hover:scale-110">
+                    <s.icon size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors duration-500">{s.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed font-light text-sm">{s.desc}</p>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Văn hóa */}
-      <section
-        id="vh"
-        className="py-24 relative"
-        style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url(${cultureBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
-      >
-        <div className="container mx-auto px-6 relative">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Văn hóa</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Excellence or Nothing</h2>
-            <p className="text-muted-foreground text-lg">Xuất sắc hoặc không có gì — 5 niềm tin định hình tổ chức H2V MEDIA.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((v) => (
-              <div key={v.title} className="bg-gradient-card border border-border/50 rounded-2xl p-7 hover:border-primary/50 transition-smooth shadow-elegant">
-                <v.icon className="text-primary mb-4" size={28} />
-                <h3 className="font-bold text-lg mb-2">{v.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+      <section id="vh" className="section-padding bg-[#040E27] relative overflow-hidden text-white">
+        <div 
+          className="absolute inset-0 opacity-10 grayscale scale-105"
+          style={{ backgroundImage: `url(${cultureBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#040E27] via-[#040E27]/95 to-[#040E27] z-10" />
+        
+        <div className="container mx-auto px-6 relative z-20">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+            >
+              <span className="subtitle text-white/30">Our Philosophy</span>
+              <h2 className="text-6xl md:text-[8rem] font-black mb-12 tracking-tighter leading-[0.85]">
+                Better <br />
+                <span className="text-gradient italic text-glow">than Before.</span>
+              </h2>
+              <p className="text-xl text-white/50 leading-relaxed font-light max-w-lg mb-12">
+                Xuất sắc hoặc không có gì — Niềm tin định hình hành trình của H2V MEDIA trên bản đồ nội dung số toàn cầu.
+              </p>
+              <div className="flex gap-4">
+                <div className="w-12 h-1.5 bg-primary rounded-full" />
+                <div className="w-4 h-1.5 bg-white/10 rounded-full" />
+                <div className="w-4 h-1.5 bg-white/10 rounded-full" />
               </div>
-            ))}
+            </motion.div>
+            
+            <div className="grid sm:grid-cols-2 gap-6">
+              {values.map((v, i) => (
+                <motion.div 
+                  key={v.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-smooth group"
+                >
+                  <v.icon className="text-primary mb-6 group-hover:scale-110 transition-smooth" size={32} strokeWidth={1.5} />
+                  <h3 className="font-bold text-xl mb-3 tracking-tight">{v.title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed font-light">{v.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Đối tác */}
-      <section id="dt" className="py-24 bg-card/30">
+      <section id="dt" className="section-padding bg-secondary/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Đối tác</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Cùng các nền tảng hàng đầu</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {partners.map((p) => (
-              <div key={p} className="aspect-[3/2] bg-gradient-card border border-border/50 rounded-xl flex items-center justify-center text-center px-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-primary/40 transition-smooth">
-                {p}
-              </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <span className="subtitle">Partnerships</span>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Mạng lưới <span className="text-primary italic">Toàn cầu.</span></h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {partners.map((p, i) => (
+              <motion.div 
+                key={p.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                className="aspect-[3/2] bg-white rounded-[2rem] flex items-center justify-center p-8 hover:shadow-elegant transition-smooth border border-transparent hover:border-primary/10 grayscale-[0.8] hover:grayscale-0"
+              >
+                <img src={p.logo} alt={p.name} className="max-w-full max-h-full object-contain opacity-40 group-hover:opacity-100 transition-smooth" />
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Liên hệ */}
-      <ContactSection />
+      {/* Contact Form */}
+      <section id="lh" className="section-padding bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto bg-[#040E27] rounded-[4rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
+            <div className="lg:w-1/2 p-12 md:p-24 text-white relative">
+              <div className="absolute top-0 right-0 p-24 opacity-5">
+                <Mail size={300} />
+              </div>
+              <div className="relative z-10">
+                <span className="subtitle text-white/30 mb-8">Contact Us</span>
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-12 italic text-gradient text-glow">Sẵn sàng <br /><span className="text-white not-italic">Hợp tác.</span></h2>
+                <div className="space-y-10">
+                  {[
+                    { icon: MapPin, text: "The Beverly Solari, Vinhomes Grand Park, TP Thủ Đức, HCM" },
+                    { icon: Phone, text: "+84 907 696 177" },
+                    { icon: Mail, text: "contact@h2vmedia.com" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-6 items-start">
+                      <item.icon size={20} className="text-primary mt-1" />
+                      <p className="text-white/60 font-light leading-relaxed">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 p-12 md:p-24 bg-white">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <SiteFooter />
     </div>
   );
 }
 
-function ContactSection() {
+function ContactForm() {
   const [sent, setSent] = useState(false);
   return (
-    <section id="lh" className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Liên hệ</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Sẵn sàng hợp tác cùng H2V MEDIA</h2>
-            <p className="text-muted-foreground text-lg mb-8">Hãy để chúng tôi đồng hành cùng bạn trên hành trình bứt phá trên Internet.</p>
-            <ul className="space-y-4">
-              <li className="flex gap-3"><MapPin className="text-primary mt-1 shrink-0" size={20} /><span>Toà BS12, The Beverly Solari, KĐT Vinhomes Grand Park, P. Long Bình, TP Hồ Chí Minh</span></li>
-              <li className="flex gap-3"><Phone className="text-primary shrink-0" size={20} /><a href="tel:+84907696177" className="hover:text-primary transition-smooth">+84 907 696 177</a></li>
-              <li className="flex gap-3"><Mail className="text-primary shrink-0" size={20} /><a href="mailto:contact@h2vmedia.com" className="hover:text-primary transition-smooth">contact@h2vmedia.com</a></li>
-            </ul>
-          </div>
-          <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="bg-gradient-card border border-border/50 rounded-2xl p-7 shadow-elegant space-y-4"
-          >
-            <div>
-              <label className="text-sm font-medium mb-2 block">Tên của bạn</label>
-              <input required className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-smooth" />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-2 block">Email</label>
-              <input type="email" required className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-smooth" />
-            </div>
-            <div>
-              <label className="text-sm font-medium mb-2 block">Lời nhắn</label>
-              <textarea rows={4} required className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary outline-none transition-smooth resize-none" />
-            </div>
-            <button type="submit" className="w-full px-6 py-3 rounded-lg bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:opacity-90 transition-smooth">
-              {sent ? "Đã gửi! Cảm ơn bạn." : "Gửi lời nhắn"}
-            </button>
-          </form>
+    <form
+      onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+      className="space-y-6 relative z-10"
+    >
+      <div className="grid sm:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Tên của bạn</label>
+          <input required className="w-full px-6 py-4 rounded-2xl bg-secondary/50 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-smooth" placeholder="Nguyễn Văn A" />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email</label>
+          <input type="email" required className="w-full px-6 py-4 rounded-2xl bg-secondary/50 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-smooth" placeholder="email@example.com" />
         </div>
       </div>
-    </section>
+      <div className="space-y-2">
+        <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Lời nhắn</label>
+        <textarea rows={4} required className="w-full px-6 py-4 rounded-2xl bg-secondary/50 border border-transparent focus:border-primary/30 focus:bg-white outline-none transition-smooth resize-none" placeholder="Tôi muốn tìm hiểu về dịch vụ..." />
+      </div>
+      <button type="submit" className="w-full px-8 py-5 rounded-2xl bg-primary text-white font-black uppercase tracking-[0.2em] shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-smooth disabled:opacity-50">
+        {sent ? "Gửi thành công!" : "Gửi lời nhắn ngay"}
+      </button>
+    </form>
   );
 }
