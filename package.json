@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "vercel-build": "cross-env NITRO_PRESET=vercel vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
