@@ -126,8 +126,12 @@ function HomePage() {
       </section>
 
       {/* Văn hóa */}
-      <section id="vh" className="py-24">
-        <div className="container mx-auto px-6">
+      <section
+        id="vh"
+        className="py-24 relative"
+        style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url(${cultureBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+      >
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Văn hóa</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Excellence or Nothing</h2>
@@ -135,7 +139,7 @@ function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v) => (
-              <div key={v.title} className="bg-gradient-card border border-border/50 rounded-2xl p-7 hover:border-primary/50 transition-smooth">
+              <div key={v.title} className="bg-gradient-card border border-border/50 rounded-2xl p-7 hover:border-primary/50 transition-smooth shadow-elegant">
                 <v.icon className="text-primary mb-4" size={28} />
                 <h3 className="font-bold text-lg mb-2">{v.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
