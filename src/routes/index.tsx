@@ -3,7 +3,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Youtube, Workflow, Globe, Sparkles, Target, Heart, Zap, Trophy, Rocket, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { useState } from "react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/goda/br.jpg";
+import aboutBg from "@/assets/goda/br2.jpg";
+import cultureBg from "@/assets/goda/br3.jpg";
 import ytImg from "@/assets/service-youtube.jpg";
 import autoImg from "@/assets/service-automation.jpg";
 import affImg from "@/assets/service-affiliate.jpg";
@@ -42,28 +44,28 @@ function HomePage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 opacity-40">
-          <img src={heroImg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+      <section
+        className="relative pt-40 pb-32 overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(4,14,39,0.65), rgba(4,14,39,0.75)), url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container mx-auto px-6 relative">
-          <div className="max-w-3xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-sm text-primary mb-6">
+          <div className="max-w-3xl animate-fade-up text-white">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-sm text-white mb-6 backdrop-blur">
               <Sparkles size={14} /> Excellence or Nothing
             </div>
+            <h2 className="text-2xl md:text-3xl font-medium mb-2">Chào mừng đến với</h2>
             <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
-              Chào mừng đến với<br />
-              <span className="text-gradient">H2V MEDIA</span>
+              H2V MEDIA
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              Nơi đưa sáng tạo người Việt ra toàn thế giới — Hội tụ Nội dung số, Automation và Affiliate Marketing quốc tế.
+            <p className="text-lg md:text-xl mb-8 max-w-2xl leading-relaxed text-white/90">
+              <strong className="text-2xl block mb-2">Nơi đưa sáng tạo của người Việt ra toàn Thế giới!</strong>
+              Hội tụ Sáng tạo nội dung YouTube, Automation đa nền tảng và Affiliate Marketing quốc tế.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#hst" className="px-7 py-3.5 rounded-xl bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:scale-105 transition-smooth inline-flex items-center gap-2">
                 Khám phá dịch vụ <ArrowRight size={18} />
               </a>
-              <a href="#lh" className="px-7 py-3.5 rounded-xl border border-border bg-card/40 backdrop-blur font-semibold hover:bg-card transition-smooth">
+              <a href="#lh" className="px-7 py-3.5 rounded-xl border border-white/40 bg-white/10 backdrop-blur text-white font-semibold hover:bg-white/20 transition-smooth">
                 Liên hệ ngay
               </a>
             </div>
@@ -124,8 +126,12 @@ function HomePage() {
       </section>
 
       {/* Văn hóa */}
-      <section id="vh" className="py-24">
-        <div className="container mx-auto px-6">
+      <section
+        id="vh"
+        className="py-24 relative"
+        style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url(${cultureBg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+      >
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">Văn hóa</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">Excellence or Nothing</h2>
@@ -133,7 +139,7 @@ function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v) => (
-              <div key={v.title} className="bg-gradient-card border border-border/50 rounded-2xl p-7 hover:border-primary/50 transition-smooth">
+              <div key={v.title} className="bg-gradient-card border border-border/50 rounded-2xl p-7 hover:border-primary/50 transition-smooth shadow-elegant">
                 <v.icon className="text-primary mb-4" size={28} />
                 <h3 className="font-bold text-lg mb-2">{v.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
