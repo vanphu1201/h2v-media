@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Briefcase, GraduationCap, Sparkles, ShieldCheck, Clock, Wallet, Mail, Phone, ArrowRight } from "lucide-react";
+import heroBg from "@/assets/goda/br_tuyendung.jpg";
 
 export const Route = createFileRoute("/tuyendung")({
   head: () => ({
