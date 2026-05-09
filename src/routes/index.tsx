@@ -122,8 +122,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <SiteHeader />
 
-      {/* Hero Section - H2V style Dark, Goda style Punchy */}
-      <section className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 h2v-gradient text-white overflow-hidden">
+      {/* Hero Section - Optimized spacing */}
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 h2v-gradient text-white overflow-hidden min-h-[85vh] flex items-center">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary rounded-full blur-[180px]" />
         </div>
@@ -134,15 +134,15 @@ export default function HomePage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-10 border border-primary/20"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-6 border border-primary/20"
             >
-              <Sparkles size={14} /> International Digital Agency
+              <Sparkles size={12} /> International Digital Agency
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl lg:text-[6rem] font-black leading-[0.95] mb-12 tracking-tighter"
+              className="text-5xl lg:text-[5.5rem] font-black leading-[0.95] mb-8 tracking-tighter"
             >
               H2V MEDIA <br />
               <span className="text-primary italic">KIẾN TẠO GIÁ TRỊ SỐ</span>
@@ -151,7 +151,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl lg:text-2xl text-white/70 mb-16 leading-relaxed max-w-2xl font-light"
+              className="text-lg lg:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light"
             >
               Mang trí tuệ và sự sáng tạo của người Việt vươn tầm thế giới qua hệ sinh thái truyền thông và công nghệ tự động hóa.
             </motion.p>
@@ -159,17 +159,17 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap gap-6"
+              className="flex flex-wrap gap-4"
             >
               <a
                 href="#lh"
-                className="px-10 py-5 rounded-2xl bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95 flex items-center gap-3"
+                className="px-8 py-4 rounded-2xl bg-primary text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95 flex items-center gap-2"
               >
-                Liên hệ ngay <ArrowRight size={18} />
+                Liên hệ ngay <ArrowRight size={16} />
               </a>
               <a
                 href="#vct"
-                className="px-10 py-5 rounded-2xl border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
+                className="px-8 py-4 rounded-2xl border border-white/20 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
               >
                 Về chúng tôi
               </a>
@@ -311,28 +311,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners - Exactly like Goda screenshot */}
-      <section id="dt" className="section-padding bg-white border-y border-slate-100">
-        <div className="container-tight">
+      {/* Partners - Infinite Marquee */}
+      <section id="dt" className="py-24 bg-white border-y border-slate-100 overflow-hidden">
+        <div className="container-tight mb-12">
           <FadeIn>
-            <div className="text-center mb-20">
-              <h3 className="text-3xl font-black text-[#040e27]">Đối tác của H2V MEDIA</h3>
+            <div className="text-center">
+              <h3 className="text-2xl font-black text-[#040e27]">Đối tác chiến lược</h3>
             </div>
           </FadeIn>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 items-center max-w-5xl mx-auto">
-            {partners.map((p, i) => (
-              <FadeIn key={p.name} delay={i * 0.1}>
-                <div className="flex justify-center group">
-                  <img 
-                    src={p.logo} 
-                    alt={p.name} 
-                    className="h-12 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-110" 
-                  />
-                </div>
-              </FadeIn>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden group">
+          <motion.div 
+            className="flex gap-16 md:gap-32 items-center whitespace-nowrap"
+            animate={{ x: [0, -1035] }}
+            transition={{ 
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 20,
+                ease: "linear",
+              }
+            }}
+          >
+            {[...partners, ...partners, ...partners].map((p, i) => (
+              <div key={`${p.name}-${i}`} className="flex justify-center shrink-0">
+                <img 
+                  src={p.logo} 
+                  alt={p.name} 
+                  className="h-10 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110" 
+                />
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
