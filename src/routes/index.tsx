@@ -14,6 +14,8 @@ import {
   Zap,
   Users,
   Lightbulb,
+  CheckCircle2,
+  ExternalLink,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -35,58 +37,60 @@ import tiktokLogo from "@/assets/partners/tiktok.png";
 const services = [
   {
     icon: Youtube,
-    title: "YouTube Content",
+    title: "Sáng tạo nội dung YouTube",
     desc: "Phát triển và quản lý kênh YouTube chuyên nghiệp, tối ưu hóa nội dung thu hút hàng triệu lượt xem trên toàn cầu.",
     img: ytImg,
-    color: "text-red-500",
   },
   {
     icon: Workflow,
-    title: "Automation",
-    desc: "Thiết kế và vận hành quy trình tự động hóa thông minh, tối ưu hiệu suất vận hành trên nhiều nền tảng số.",
+    title: "Hệ thống Automation",
+    desc: "Thiết kế và vận hành quy trình tự động hóa thông minh, giúp tối ưu thời gian và tăng cường hiệu suất.",
     img: autoImg,
-    color: "text-blue-500",
   },
   {
     icon: Globe,
-    title: "Affiliate Global",
+    title: "Tiếp thị liên kết Quốc tế",
     desc: "Mở rộng tiếp thị sản phẩm ra thị trường quốc tế thông qua mạng lưới liên kết và chiến lược thông minh.",
     img: affImg,
-    color: "text-emerald-500",
   },
 ];
 
 const visionMission = [
   {
-    icon: Globe,
     title: "Tầm nhìn",
-    desc: "Khẳng định bản sắc trí tuệ và sức sáng tạo Việt trên bản đồ truyền thông thế giới, mang dòng vốn ngoại tệ về phụng sự Quốc gia.",
+    desc: "Trở thành hệ sinh thái truyền thông số và công nghệ tự động hóa hàng đầu, đưa sản phẩm sáng tạo Việt phủ sóng toàn cầu.",
   },
   {
-    icon: Rocket,
     title: "Sứ mệnh",
-    desc: "Hợp lực cùng 1,000 nhân sự Việt kiến tạo sự nghiệp thịnh vượng trên Internet Global, nâng tầm vị thế lao động tri thức.",
+    desc: "Tiên phong ứng dụng công nghệ để bứt phá giới hạn sáng tạo, mang lại giá trị thực chất cho khán giả và đối tác.",
   },
+];
+
+const values = [
+  { title: "Sáng tạo", desc: "Liên tục đổi mới, phá vỡ mọi giới hạn." },
+  { title: "Trách nhiệm", desc: "Cống hiến nội dung mang giá trị tích cực." },
+  { title: "Hiệu quả", desc: "Tối ưu quy trình, đạt kết quả vượt trội." },
+  { title: "Đột phá", desc: "Dám nghĩ, dám làm, tạo bước nhảy vọt." },
 ];
 
 const leadership = [
   {
-    name: "Mr Phan Thanh Vy",
+    name: "Ông Phan Thanh Vy",
     role: "CEO",
     img: ceoImg,
-    badge: "Strategist",
+    bio: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số.",
   },
   {
-    name: "Mrs Lê Thị Thanh Thảo",
-    role: "Content Director",
+    name: "Bà Lê Thị Thanh Thảo",
+    role: "Trưởng phòng Nội dung",
     img: contentMgrImg,
-    badge: "Creative",
+    bio: "Lãnh đạo sáng tạo với bề dày kinh nghiệm trong phát triển các hệ thống nội dung triệu view.",
   },
   {
-    name: "Mr Lê Đặng Hiếu",
-    role: "Technical Director",
+    name: "Ông Lê Đặng Hiếu",
+    role: "Trưởng phòng Kỹ thuật",
     img: ctoImg,
-    badge: "Architect",
+    bio: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong thiết kế hệ thống tự động hoá đa nền tảng.",
   },
 ];
 
@@ -97,12 +101,12 @@ const partners = [
   { name: "Google Ads", logo: googleLogo },
 ];
 
-const FadeIn = ({ children, delay = 0, y = 30 }: { children: React.ReactNode; delay?: number; y?: number }) => (
+const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
-    initial={{ opacity: 0, y }}
+    initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 1, delay, ease: [0.23, 1, 0.32, 1] }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.6, delay }}
   >
     {children}
   </motion.div>
@@ -110,116 +114,107 @@ const FadeIn = ({ children, delay = 0, y = 30 }: { children: React.ReactNode; de
 
 export default function HomePage() {
   usePageMeta({
-    title: "H2V MEDIA — International Digital Excellence",
-    description: "Sáng tạo nội dung YouTube, Automation đa nền tảng và Affiliate Marketing quốc tế.",
+    title: "H2V MEDIA — Kiến tạo giá trị số toàn cầu",
+    description: "H2V Media là công ty công nghệ sáng tạo tiên phong, chuyên sản xuất nội dung chất lượng cao và giải pháp tiếp thị số.",
   });
 
   return (
-    <div className="min-h-screen bg-white selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Background Accents */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 -skew-x-12 translate-x-1/4 z-0" />
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px] z-0 animate-pulse" />
+      {/* Hero Section - H2V style Dark, Goda style Punchy */}
+      <section className="relative pt-32 pb-24 lg:pt-56 lg:pb-40 h2v-gradient text-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary rounded-full blur-[180px]" />
+        </div>
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl">
+        <div className="container-tight relative z-10">
+          <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="flex items-center gap-4 mb-8"
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-10 border border-primary/20"
             >
-              <div className="w-12 h-px bg-primary" />
-              <span className="subtitle mb-0">H2V Media International</span>
+              <Sparkles size={14} /> International Digital Agency
             </motion.div>
-            
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="text-6xl md:text-[8.5rem] font-extrabold text-slate-950 leading-[0.9] mb-12 tracking-tighter"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl lg:text-[6rem] font-black leading-[0.95] mb-12 tracking-tighter"
             >
-              Excellence <br />
-              <span className="text-primary italic">or Nothing.</span>
+              H2V MEDIA <br />
+              <span className="text-primary italic">KIẾN TẠO GIÁ TRỊ SỐ</span>
             </motion.h1>
-            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="text-xl md:text-3xl text-slate-500 mb-16 leading-relaxed font-light max-w-3xl text-balance"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl lg:text-2xl text-white/70 mb-16 leading-relaxed max-w-2xl font-light"
             >
-              Nơi đưa sáng tạo Việt vươn tầm Thế giới qua hệ sinh thái <span className="text-slate-950 font-medium">Content & Automation</span>.
+              Mang trí tuệ và sự sáng tạo của người Việt vươn tầm thế giới qua hệ sinh thái truyền thông và công nghệ tự động hóa.
             </motion.p>
-            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-wrap items-center gap-8"
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-wrap gap-6"
             >
               <a
-                href="#hst"
-                className="group relative px-10 py-5 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-widest shadow-vital hover:scale-105 transition-all duration-500 overflow-hidden"
+                href="#lh"
+                className="px-10 py-5 rounded-2xl bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95 flex items-center gap-3"
               >
-                <span className="relative z-10 flex items-center gap-3">
-                  Khám phá dịch vụ <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-blue-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                Liên hệ ngay <ArrowRight size={18} />
               </a>
               <a
-                href="#lh"
-                className="group flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-slate-950 hover:text-primary transition-colors"
+                href="#vct"
+                className="px-10 py-5 rounded-2xl border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
               >
-                Liên hệ hợp tác <div className="w-8 h-px bg-slate-200 group-hover:w-12 group-hover:bg-primary transition-all duration-500" />
+                Về chúng tôi
               </a>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="vct" className="section-padding bg-slate-950 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary rounded-full blur-[150px]" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-32 items-center">
+      {/* About Section - Goda style Clean */}
+      <section id="vct" className="section-padding bg-white">
+        <div className="container-tight">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
             <FadeIn>
-              <span className="subtitle text-primary/80">Our Vision</span>
-              <h2 className="text-5xl md:text-7xl font-extrabold mb-12 tracking-tight">
-                Kiến tạo tương lai <br />
-                <span className="italic font-light opacity-50">Kỹ thuật số.</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Về H2V Media</span>
+              <h2 className="text-4xl lg:text-5xl font-black mb-10 text-foreground leading-tight">
+                Tiên phong kiến tạo <br />
+                <span className="text-primary">giá trị số bền vững</span>
               </h2>
-              <p className="text-xl text-white/60 leading-relaxed font-light mb-16 max-w-lg">
-                Chúng tôi không chỉ làm truyền thông, chúng tôi xây dựng hệ thống vận hành thông minh giúp người Việt bứt phá giới hạn thu nhập trên quy mô toàn cầu.
+              <p className="text-lg text-slate-500 leading-relaxed font-light mb-12">
+                H2V Media là công ty công nghệ sáng tạo tiên phong, chuyên sản xuất nội dung chất lượng cao và giải pháp tiếp thị số, vươn tầm thị trường quốc tế. Chúng tôi tin vào sức mạnh của trí tuệ Việt trên bản đồ số toàn cầu.
               </p>
-              <div className="grid grid-cols-2 gap-10">
-                {visionMission.map((item, i) => (
-                  <div key={item.title} className="space-y-4">
-                    <div className="w-12 h-1 bg-primary" />
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-sm text-white/40 leading-relaxed font-light">{item.desc}</p>
+              
+              <div className="space-y-8">
+                {visionMission.map((item) => (
+                  <div key={item.title} className="flex gap-6 p-8 rounded-[2rem] bg-secondary border border-primary/5">
+                    <div className="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center shrink-0">
+                      {item.title === "Tầm nhìn" ? <Globe size={24} /> : <Rocket size={24} />}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <p className="text-sm text-slate-500 leading-relaxed font-light">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.2} y={50}>
-              <div className="relative aspect-square rounded-[3rem] overflow-hidden group">
-                <img 
-                  src={affImg} 
-                  alt="Global Reach" 
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 scale-110 group-hover:scale-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-12 left-12 right-12">
-                  <div className="text-4xl font-extrabold mb-2 tracking-tighter">10M+</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-primary">Monthly Reach</div>
+            
+            <FadeIn delay={0.2}>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
+                  <img src={ytImg} alt="Media Studio" className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute -bottom-10 -left-10 p-10 bg-white rounded-[2.5rem] shadow-2xl border border-slate-50 hidden md:block">
+                  <div className="text-4xl font-black text-primary mb-1">10M+</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Monthly Reach</div>
                 </div>
               </div>
             </FadeIn>
@@ -227,31 +222,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="hst" className="section-padding relative">
-        <div className="container mx-auto px-6">
+      {/* Services - Goda style Grid */}
+      <section id="hst" className="section-padding bg-secondary">
+        <div className="container-tight">
           <FadeIn>
-            <div className="text-center mb-32">
-              <span className="subtitle">Core Services</span>
-              <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-950">
-                Giải pháp <span className="text-primary italic">Đột phá.</span>
-              </h2>
+            <div className="text-center mb-24">
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Hệ sinh thái dịch vụ</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground">Giải pháp truyền thông đa nền tảng</h3>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((s, i) => (
-              <FadeIn key={s.title} delay={i * 0.15}>
-                <div className="group relative p-12 rounded-[3.5rem] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-elegant transition-all duration-700 h-full flex flex-col">
-                  <div className={`w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500 ${s.color}`}>
-                    <s.icon size={32} strokeWidth={1.5} />
+              <FadeIn key={s.title} delay={i * 0.1}>
+                <div className="group bg-white p-10 rounded-[3rem] goda-shadow hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <s.icon size={32} />
                   </div>
-                  <h3 className="text-3xl font-bold mb-6 tracking-tight text-slate-950">{s.title}</h3>
-                  <p className="text-base text-slate-500 leading-relaxed font-light mb-10 flex-grow">
-                    {s.desc}
-                  </p>
-                  <div className="relative aspect-video rounded-3xl overflow-hidden group-hover:shadow-lg transition-all duration-700">
+                  <h4 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">{s.title}</h4>
+                  <p className="text-base text-slate-500 leading-relaxed font-light mb-10 flex-grow">{s.desc}</p>
+                  <div className="relative aspect-video rounded-3xl overflow-hidden mt-auto">
                     <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </div>
               </FadeIn>
@@ -260,44 +252,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Leadership */}
-      <section id="ld" className="section-padding bg-slate-50/50">
-        <div className="container mx-auto px-6">
-          <FadeIn>
-            <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <div>
-                <span className="subtitle">Leadership</span>
-                <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950">
-                  Ban <span className="text-primary italic">Lãnh Đạo.</span>
-                </h2>
-              </div>
-              <p className="max-w-md text-slate-500 font-light leading-relaxed">
-                Đội ngũ chuyên gia dày dặn kinh nghiệm, dẫn dắt H2V chinh phục thị trường truyền thông số toàn cầu.
-              </p>
+      {/* Values - Goda style Horizontal */}
+      <section id="vh" className="section-padding bg-white overflow-hidden">
+        <div className="container-tight">
+          <div className="flex flex-col lg:flex-row gap-20 items-center">
+            <div className="lg:w-1/3">
+              <FadeIn>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Giá trị văn hoá</span>
+                <h3 className="text-4xl font-black mb-8 leading-tight">Nền tảng cho sự bứt phá</h3>
+                <p className="text-slate-500 font-light leading-relaxed mb-10">
+                  Tại H2V Media, chúng tôi xây dựng văn hóa dựa trên sự sáng tạo không ngừng và trách nhiệm với cộng đồng.
+                </p>
+                <div className="w-20 h-1.5 bg-primary rounded-full" />
+              </FadeIn>
             </div>
-          </FadeIn>
+            
+            <div className="lg:w-2/3 grid sm:grid-cols-2 gap-8">
+              {values.map((v, i) => (
+                <FadeIn key={v.title} delay={i * 0.1}>
+                  <div className="p-10 rounded-[2.5rem] bg-secondary hover:bg-white hover:goda-shadow transition-all duration-500 border border-transparent hover:border-primary/5">
+                    <h4 className="text-xl font-bold mb-4 flex items-center gap-3">
+                      <CheckCircle2 size={20} className="text-primary" /> {v.title}
+                    </h4>
+                    <p className="text-sm text-slate-500 leading-relaxed font-light">{v.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Leadership - Combined style */}
+      <section id="ld" className="section-padding bg-secondary/50">
+        <div className="container-tight text-center mb-24">
+          <FadeIn>
+            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Leadership</span>
+            <h3 className="text-4xl lg:text-5xl font-black text-foreground">Đội ngũ dẫn dắt chiến lược</h3>
+          </FadeIn>
+        </div>
+
+        <div className="container-tight">
           <div className="grid md:grid-cols-3 gap-12">
             {leadership.map((member, i) => (
-              <FadeIn key={member.name} delay={i * 0.15}>
-                <div className="group">
-                  <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden mb-10 bg-slate-200 shadow-sm border border-slate-100">
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <div className="absolute bottom-10 left-10 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
-                      <span className="px-5 py-2 rounded-full bg-primary text-white text-[12px] font-bold uppercase tracking-widest">
-                        {member.badge}
-                      </span>
-                    </div>
+              <FadeIn key={member.name} delay={i * 0.1}>
+                <div className="group text-center">
+                  <div className="relative aspect-square rounded-[3rem] overflow-hidden mb-10 bg-white goda-shadow">
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-slate-950">{member.name}</h3>
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary">
-                    {member.role}
-                  </p>
+                  <h4 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{member.name}</h4>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">{member.role}</p>
+                  <p className="text-sm text-slate-500 font-light leading-relaxed max-w-[280px] mx-auto opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">{member.bio}</p>
                 </div>
               </FadeIn>
             ))}
@@ -305,20 +311,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section id="dt" className="py-32 border-y border-slate-100 bg-slate-50/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-primary">Strategic Partners</span>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 items-center">
+      {/* Partners - Exactly like Goda screenshot */}
+      <section id="dt" className="section-padding bg-white border-y border-slate-100">
+        <div className="container-tight">
+          <FadeIn>
+            <div className="text-center mb-20">
+              <h3 className="text-3xl font-black text-[#040e27]">Đối tác của H2V MEDIA</h3>
+            </div>
+          </FadeIn>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24 items-center max-w-5xl mx-auto">
             {partners.map((p, i) => (
               <FadeIn key={p.name} delay={i * 0.1}>
                 <div className="flex justify-center group">
                   <img 
                     src={p.logo} 
                     alt={p.name} 
-                    className="h-14 md:h-16 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 filter-none" 
+                    className="h-12 md:h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-110" 
                   />
                 </div>
               </FadeIn>
@@ -327,44 +336,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="lh" className="section-padding overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-          <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <FadeIn>
-            <span className="subtitle">Get in Touch</span>
-            <h2 className="text-6xl md:text-[8rem] font-extrabold mb-20 text-slate-950 tracking-tighter leading-none">
-              Sẵn sàng <br />
-              <span className="text-primary italic">Hợp tác.</span>
-            </h2>
-            
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-20">
-              <div className="p-12 rounded-[3.5rem] bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all text-left group">
-                <Mail className="text-primary mb-8 group-hover:scale-110 transition-transform" size={44} strokeWidth={1.5} />
-                <div className="text-[12px] uppercase font-bold tracking-widest text-slate-500 mb-4">Email Official</div>
-                <a href="mailto:contact@h2vmedia.com" className="text-2xl md:text-3xl font-bold text-slate-950 hover:text-primary transition-colors">
-                  contact@h2vmedia.com
-                </a>
-              </div>
-              <div className="p-12 rounded-[3.5rem] bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all text-left group">
-                <Phone className="text-primary mb-8 group-hover:scale-110 transition-transform" size={44} strokeWidth={1.5} />
-                <div className="text-[12px] uppercase font-bold tracking-widest text-slate-500 mb-4">Hotline 24/7</div>
-                <a href="tel:+84907696177" className="text-2xl md:text-3xl font-bold text-slate-950 hover:text-primary transition-colors">
-                  +84 907 696 177
-                </a>
+      {/* Contact - Hybrid Trust */}
+      <section id="lh" className="section-padding bg-secondary">
+        <div className="container-tight">
+          <div className="max-w-6xl mx-auto bg-white rounded-[4rem] goda-shadow overflow-hidden flex flex-col lg:flex-row">
+            <div className="lg:w-1/2 p-12 lg:p-20 h2v-gradient text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/4" />
+              <div className="relative z-10">
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">Liên hệ</span>
+                <h3 className="text-4xl lg:text-5xl font-black mb-12 leading-tight">Bạn đã sẵn sàng để bứt phá?</h3>
+                <p className="text-white/60 mb-16 leading-relaxed font-light text-lg">
+                  Hãy gửi tin nhắn hoặc gọi ngay cho chúng tôi để nhận được giải pháp tối ưu nhất cho doanh nghiệp của bạn.
+                </p>
+                
+                <div className="space-y-10">
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-primary">
+                      <Mail size={28} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Email Official</div>
+                      <div className="text-xl font-bold">contact@h2vmedia.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-6">
+                    <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-primary">
+                      <Phone size={28} />
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Hotline 24/7</div>
+                      <div className="text-xl font-bold">+84 907 696 177</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <a
-              href="mailto:contact@h2vmedia.com"
-              className="inline-flex px-14 py-6 rounded-full bg-slate-950 text-white text-sm font-bold uppercase tracking-widest hover:bg-primary transition-all duration-500 shadow-xl hover:scale-105 active:scale-95"
-            >
-              Gửi lời nhắn cho chúng tôi
-            </a>
-          </FadeIn>
+            <div className="lg:w-1/2 p-12 lg:p-20">
+              <h4 className="text-3xl font-black mb-10">Gửi lời nhắn</h4>
+              <div className="space-y-8">
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">Họ và tên</label>
+                  <input type="text" className="w-full px-6 py-4 rounded-2xl bg-secondary border border-slate-100 focus:border-primary focus:outline-none transition-all font-medium" placeholder="Nguyễn Văn A" />
+                </div>
+                <div>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">Số điện thoại</label>
+                  <input type="text" className="w-full px-6 py-4 rounded-2xl bg-secondary border border-slate-100 focus:border-primary focus:outline-none transition-all font-medium" placeholder="090 123 4567" />
+                </div>
+                <button className="w-full py-5 rounded-2xl bg-primary text-white font-black uppercase tracking-widest text-sm shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                  Gửi tin nhắn ngay
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

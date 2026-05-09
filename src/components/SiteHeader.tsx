@@ -12,8 +12,7 @@ const homeLinks = [
 
 const recruitLinks = [
   { href: "#ut", label: "Ưu thế" },
-  { href: "#vt", label: "Vị trí đang tuyển" },
-  { href: "#hs", label: "Nộp hồ sơ" },
+  { href: "#vt", label: "Vị trí tuyển dụng" },
   { href: "#lh", label: "Liên hệ" },
 ];
 
@@ -26,79 +25,80 @@ export function SiteHeader() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white/90 backdrop-blur-xl border-b border-slate-100 py-4 shadow-sm" : "bg-transparent py-8"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        scrolled ? "bg-white/90 backdrop-blur-md shadow-lg py-4" : "bg-transparent py-8"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group">
+      <div className="container-tight flex items-center justify-between">
+        <a href="/" className="flex items-center gap-3">
           <div className="flex flex-col leading-none">
-            <span className="font-extrabold text-2xl tracking-tighter text-slate-950">
+            <span className={`font-black text-2xl tracking-tighter ${scrolled ? "text-foreground" : "text-white"}`}>
               H2V <span className="text-primary italic">MEDIA</span>
             </span>
           </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-[14px] font-bold uppercase tracking-widest text-slate-600 hover:text-primary transition-colors duration-300"
+              className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
+                scrolled ? "text-slate-600 hover:text-primary" : "text-white/70 hover:text-white"
+              }`}
             >
               {l.label}
             </a>
           ))}
           <a
-            href={isRecruit ? "#hs" : "/tuyendung"}
-            className="px-8 py-3 rounded-full bg-primary text-white text-[13px] font-bold uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 shadow-vital hover:scale-105 active:scale-95"
+            href={isRecruit ? "#lh" : "/tuyendung"}
+            className="px-8 py-3.5 rounded-2xl bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95"
           >
-            {isRecruit ? "Nộp hồ sơ" : "Tuyển dụng"}
+            {isRecruit ? "Liên hệ ngay" : "Tuyển dụng"}
           </a>
         </nav>
 
         <button
-          className="md:hidden text-slate-950"
+          className={`lg:hidden p-2 rounded-xl bg-primary/10 text-primary transition-all ${scrolled ? "" : "bg-white/10 text-white"}`}
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
-          {open ? <X size={28} /> : <Menu size={28} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-2xl overflow-hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-2xl overflow-hidden"
           >
-            <nav className="container mx-auto px-6 py-12 flex flex-col gap-8">
+            <nav className="container-tight py-12 flex flex-col gap-8">
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-[14px] font-bold uppercase tracking-widest text-slate-950 border-b border-slate-50 pb-4"
+                  className="text-sm font-black uppercase tracking-widest text-foreground hover:text-primary transition-colors"
                 >
                   {l.label}
                 </a>
               ))}
               <a
-                href={isRecruit ? "#hs" : "/tuyendung"}
+                href={isRecruit ? "#lh" : "/tuyendung"}
                 onClick={() => setOpen(false)}
-                className="px-8 py-5 rounded-2xl bg-primary text-white text-center text-[14px] font-bold uppercase tracking-widest shadow-vital"
+                className="w-full py-5 rounded-[2rem] bg-primary text-white text-center text-sm font-black uppercase tracking-widest shadow-xl shadow-primary/20"
               >
-                {isRecruit ? "Nộp hồ sơ ngay" : "Tuyển dụng"}
+                {isRecruit ? "Liên hệ ngay" : "Tuyển dụng"}
               </a>
             </nav>
           </motion.div>

@@ -5,26 +5,25 @@
   --font-sans: 'Be Vietnam Pro', system-ui, sans-serif;
   
   --color-background: #ffffff;
-  --color-foreground: #020617; /* Navy 950 */
+  --color-foreground: #040e27; /* GODA Navy */
   
-  --color-primary: #2563eb; /* Blue 600 - Vitality */
+  --color-primary: #00bdfe; /* GODA Cyan Accent */
   --color-primary-foreground: #ffffff;
   
-  --color-secondary: #f8fafc; /* Slate 50 */
-  --color-secondary-foreground: #475569; /* Slate 600 */
+  --color-secondary: #f2f7fd; /* H2V Light Blue BG */
+  --color-secondary-foreground: #1e293b;
   
-  --color-muted: #f1f5f9; /* Slate 100 */
-  --color-muted-foreground: #64748b; /* Slate 500 */
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #64748b;
   
-  --color-accent: #1e293b; /* Slate 800 */
+  --color-accent: #0b1120; /* H2V Deep Navy */
   --color-accent-foreground: #ffffff;
   
-  --color-border: #e2e8f0; /* Slate 200 */
+  --color-border: #e2e8f0;
   
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
   --radius-3xl: 2.5rem;
-  --radius-4xl: 4rem;
 }
 
 @layer base {
@@ -33,49 +32,35 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4 {
-    letter-spacing: -0.04em;
-    line-height: 1.05;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
     font-weight: 800;
   }
 }
 
 @layer utilities {
   .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   
-  .text-balance {
-    text-wrap: balance;
+  .container-tight {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   
-  .transition-smooth {
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  .goda-shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   }
   
-  .bg-primary-gradient {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  }
-  
-  .shadow-elegant {
-    box-shadow: 0 20px 40px -15px rgba(2, 6, 23, 0.1);
-  }
-  
-  .shadow-vital {
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.2);
-  }
-  
-  .subtitle {
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    display: block;
+  .h2v-gradient {
+    background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
   }
 }
