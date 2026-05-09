@@ -1,7 +1,14 @@
 {
   "version": 2,
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": ".vercel/output",
-  "cleanUrls": true,
-  "framework": null
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/client",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.js" },
+    { "source": "/_server/(.*)", "destination": "/api/index.js" },
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js",
+      "checkInternalReactions": true
+    }
+  ]
 }
