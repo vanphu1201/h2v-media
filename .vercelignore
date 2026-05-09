@@ -6,5 +6,7 @@
 node_modules
 dist
 .output
+api
+build_error.txt
 README.md
 components.json
