@@ -4,13 +4,14 @@ import {
   ArrowRight,
   Globe,
   Heart,
+  Lightbulb,
   Mail,
   MapPin,
   Phone,
   Rocket,
   Sparkles,
-  Target,
-  Trophy,
+  ShieldCheck,
+  Users,
   Workflow,
   Youtube,
   Zap,
@@ -26,8 +27,6 @@ import affImg from "@/assets/service-affiliate.jpg";
 import ytLogo from "@/assets/partners/youtube.png";
 import metaLogo from "@/assets/partners/meta.png";
 import googleLogo from "@/assets/partners/google_ads.png";
-import amazonLogo from "@/assets/partners/amazon.png";
-import clickbankLogo from "@/assets/partners/clickbank.png";
 import tiktokLogo from "@/assets/partners/tiktok.png";
 import huanImg from "@/assets/leaders/huan.png";
 import hoangImg from "@/assets/leaders/hoang.png";
@@ -37,58 +36,56 @@ const services = [
   {
     icon: Youtube,
     title: "Sáng tạo nội dung YouTube",
-    desc: "Sản xuất nội dung YouTube chất lượng cao, từ ý tưởng đến triển khai cho thị trường trong nước và quốc tế.",
+    desc: "Phát triển và quản lý kênh YouTube chuyên nghiệp, tối ưu hóa nội dung thu hút hàng triệu lượt xem trên toàn cầu.",
     img: ytImg,
   },
   {
     icon: Workflow,
     title: "Triển khai Automation đa nền tảng",
-    desc: "Xây dựng và vận hành hệ thống tự động hoá quy trình, kết nối đa nền tảng, tối ưu năng suất doanh nghiệp.",
+    desc: "Thiết kế và vận hành các quy trình tự động hóa thông minh, giúp tối ưu thời gian, nguồn nhân lực và tăng cường hiệu suất vận hành trên nhiều nền tảng số.",
     img: autoImg,
   },
   {
     icon: Globe,
-    title: "Tiếp thị liên kết quốc tế",
-    desc: "Affiliate Marketing toàn cầu — kết nối thương hiệu với hàng triệu khách hàng tiềm năng trên khắp thế giới.",
+    title: "Tiếp thị liên kết quốc tế (Affiliate Marketing)",
+    desc: "Mở rộng tiếp thị sản phẩm ra thị trường quốc tế thông qua mạng lưới liên kết mượt và chiến lược thông minh.",
     img: affImg,
   },
 ];
 
 const values = [
   {
-    icon: Sparkles,
-    title: "Sáng tạo không giới hạn",
-    desc: "Trong mọi cách làm, luôn luôn tồn tại một cách làm tốt hơn.",
+    icon: Lightbulb,
+    title: "Sáng tạo",
+    desc: "Liên tục đổi mới, phá vỡ mọi giới hạn.",
   },
   {
-    icon: Target,
-    title: "Tập trung kết quả",
-    desc: "Tìm đúng người, hỏi đúng chuyện, làm đúng việc — Play to Win.",
+    icon: ShieldCheck,
+    title: "Trách nhiệm",
+    desc: "Đề cao việc cống hiến những nội dung mang giá trị tích cực, nhân văn và hữu ích cho cộng đồng.",
+  },
+  {
+    icon: Rocket,
+    title: "Hiệu quả",
+    desc: "Tối ưu quy trình, đạt kết quả vượt trội.",
   },
   {
     icon: Zap,
-    title: "Internet hoặc không gì cả",
-    desc: "Bắt đầu một nguồn thu nhập mới trên Internet ngay từ hôm nay.",
+    title: "Đột phá",
+    desc: "Dám nghĩ, dám làm, tạo bước nhảy vọt.",
   },
   {
-    icon: Heart,
-    title: "Niềm tin tạo động lực",
-    desc: "Khi có đủ niềm tin, sẽ tạo ra động lực thực hiện không giới hạn.",
-  },
-  {
-    icon: Trophy,
-    title: "Đơn giản mà hiệu quả",
-    desc: "Hãy thành công theo cách đơn giản nhất.",
+    icon: Users,
+    title: "Gắn kết",
+    desc: "Đồng lòng hợp tác, xây dựng sức mạnh tập thể.",
   },
 ];
 
 const partners = [
-  { name: "YouTube Partner", logo: ytLogo },
-  { name: "Meta Business", logo: metaLogo },
+  { name: "YouTube", logo: ytLogo },
+  { name: "Facebook", logo: metaLogo },
+  { name: "TikTok", logo: tiktokLogo },
   { name: "Google Ads", logo: googleLogo },
-  { name: "Amazon Associates", logo: amazonLogo },
-  { name: "ClickBank", logo: clickbankLogo },
-  { name: "TikTok Shop", logo: tiktokLogo },
 ];
 
 const leadership = [
@@ -443,7 +440,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <span className="subtitle">Ecosystem</span>
+            <span className="subtitle">Dịch vụ nổi bật</span>
             <h2 className="text-5xl md:text-7xl font-black tracking-tighter">
               Dịch vụ <span className="text-primary italic">Hợp nhất.</span>
             </h2>
@@ -502,14 +499,14 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
-              <span className="subtitle text-white/30">Our Philosophy</span>
-              <h2 className="text-6xl md:text-[8rem] font-black mb-12 tracking-tighter leading-[0.85]">
-                Better <br />
-                <span className="text-gradient italic text-glow">than Before.</span>
+              <span className="subtitle text-white/30">Văn hóa H2V</span>
+              <h2 className="text-5xl md:text-7xl font-black mb-12 tracking-tighter leading-[0.95]">
+                Văn hóa <br />
+                <span className="text-gradient italic text-glow">công ty.</span>
               </h2>
               <p className="text-xl text-white/50 leading-relaxed font-light max-w-lg mb-12">
-                Xuất sắc hoặc không có gì — Niềm tin định hình hành trình của H2V MEDIA trên
-                bản đồ nội dung số toàn cầu.
+                Những giá trị cốt lõi định hướng cách H2V MEDIA làm việc, cộng tác và phát
+                triển mỗi ngày.
               </p>
               <div className="flex gap-4">
                 <div className="w-12 h-1.5 bg-primary rounded-full" />
@@ -550,13 +547,13 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <span className="subtitle">Partnerships</span>
+            <span className="subtitle">Đối tác chiến lược</span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
-              Mạng lưới <span className="text-primary italic">Toàn cầu.</span>
+              Đối tác <span className="text-primary italic">chiến lược.</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {partners.map((p, i) => (
               <motion.div
                 key={p.name}

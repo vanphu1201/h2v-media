@@ -6,9 +6,11 @@ import {
   Clock,
   GraduationCap,
   Mail,
+  MapPin,
   Phone,
   ShieldCheck,
   Sparkles,
+  Users,
   Wallet,
   X,
 } from "lucide-react";
@@ -16,150 +18,109 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import heroBg from "@/assets/goda/br_tuyendung.jpg";
-import jobContent from "@/assets/jobs/content_creator.png";
-import jobAuto from "@/assets/jobs/automation.png";
-import jobAff from "@/assets/jobs/affiliate.png";
 import jobVideo from "@/assets/jobs/video_editor.png";
-import jobThumb from "@/assets/jobs/thumbnail.png";
 import jobWriter from "@/assets/jobs/writer.png";
+import jobContent from "@/assets/jobs/content_creator.png";
 
 const benefits = [
   {
     icon: Wallet,
     title: "Thu nhập hấp dẫn",
-    desc: "Thưởng cá nhân xuất sắc, KPI, tháng 13, lễ Tết, sinh nhật. Phụ cấp 2 mùa/năm.",
+    desc: "Thưởng cá nhân xuất sắc, thưởng theo kết quả hoạt động của Team, thưởng tháng lương thứ 13, thưởng Lễ Tết, thưởng sinh nhật. Ngoài ra còn phụ cấp theo tình hình công việc.",
   },
   {
     icon: GraduationCap,
     title: "Đào tạo phát triển",
-    desc: "Đào tạo nội bộ kỹ năng & chuyên môn hàng tháng, cử đi nâng cao chuyên môn, ngoại ngữ.",
+    desc: "Đào tạo nội bộ các kĩ năng mềm, kĩ năng, chuyên môn theo từng dự án, từng phòng ban. Được cử đi đào tạo nâng cao chuyên môn, nghiệp vụ,...",
   },
   {
-    icon: Sparkles,
-    title: "Môi trường trẻ",
-    desc: "Năng động, thân thiện, sáng tạo, kích thích phát triển cá nhân tối đa.",
+    icon: Users,
+    title: "Môi trường làm việc",
+    desc: "Năng động, thân thiện, sáng tạo và kích thích khả năng phát triển cá nhân cao.",
   },
   {
     icon: ShieldCheck,
-    title: "Chế độ đầy đủ",
-    desc: "BHXH, nghỉ phép, thai sản, du lịch hàng năm theo Luật lao động hiện hành.",
+    title: "Các chế độ khác",
+    desc: "Đóng bảo hiểm, tuân thủ các chế độ theo Luật lao động hiện hành: nghỉ phép, thai sản,...",
   },
 ];
 
 const jobs = [
   {
-    title: "Content Creator YouTube",
-    desc: "Lên ý tưởng, sản xuất nội dung kênh YouTube cho thị trường quốc tế.",
-    img: jobContent,
-    details: {
-      requirements: [
-        "Có kinh nghiệm quản lý kênh YouTube",
-        "Tiếng Anh đọc hiểu tốt",
-        "Sáng tạo, nắm bắt xu hướng nhanh",
-      ],
-      benefits: [
-        "Lương thưởng theo view",
-        "Làm việc với đội ngũ triệu sub",
-        "Thiết bị hiện đại",
-      ],
-      tasks: ["Nghiên cứu chủ đề trend", "Viết kịch bản video", "Phối hợp team Video Editor"],
-    },
-  },
-  {
-    title: "Automation Engineer",
-    desc: "Triển khai hệ thống automation đa nền tảng (n8n, Make, Zapier, custom).",
-    img: jobAuto,
-    details: {
-      requirements: [
-        "Thành thạo n8n, Make hoặc Zapier",
-        "Biết JavaScript cơ bản",
-        "Tư duy logic tốt",
-      ],
-      benefits: [
-        "Thử thách với các hệ thống phức tạp",
-        "Môi trường công nghệ cao",
-        "Lương cạnh tranh",
-      ],
-      tasks: ["Thiết kế luồng automation", "Xử lý dữ liệu API", "Tối ưu hiệu suất hệ thống"],
-    },
-  },
-  {
-    title: "Affiliate Marketing Specialist",
-    desc: "Vận hành campaign affiliate quốc tế, tối ưu chuyển đổi đa thị trường.",
-    img: jobAff,
-    details: {
-      requirements: [
-        "Am hiểu về CPA, CPL, RevShare",
-        "Kinh nghiệm chạy Ads (FB, Google, TikTok)",
-        "Phân tích số liệu tốt",
-      ],
-      benefits: [
-        "Commission hấp dẫn",
-        "Ngân sách chạy ads lớn",
-        "Đào tạo bài bản từ chuyên gia",
-      ],
-      tasks: ["Tìm kiếm offer tiềm năng", "Set up và tối ưu campaign", "Báo cáo hiệu quả hằng ngày"],
-    },
-  },
-  {
-    title: "Video Editor",
-    desc: "Dựng video YouTube, motion graphics cho các kênh triệu sub.",
-    img: jobVideo,
-    details: {
-      requirements: [
-        "Sử dụng thành thạo Premiere, After Effects",
-        "Có gu thẩm mỹ tốt",
-        "Chịu được áp lực tiến độ",
-      ],
-      benefits: [
-        "Rèn luyện kỹ năng dựng chuyên sâu",
-        "Thưởng theo chất lượng video",
-        "Môi trường sáng tạo",
-      ],
-      tasks: [
-        "Dựng video YouTube triệu view",
-        "Thiết kế hiệu ứng motion",
-        "Chỉnh sửa màu sắc & âm thanh",
-      ],
-    },
-  },
-  {
-    title: "Thumbnail Designer",
-    desc: "Thiết kế thumbnail tối ưu CTR cho video YouTube quốc tế.",
-    img: jobThumb,
-    details: {
-      requirements: [
-        "Sử dụng tốt Photoshop",
-        "Am hiểu tâm lý người xem YouTube",
-        "Sáng tạo trong bố cục",
-      ],
-      benefits: [
-        "Học hỏi kỹ thuật tối ưu CTR",
-        "Lương thưởng theo hiệu quả",
-        "Team trẻ trung",
-      ],
-      tasks: ["Thiết kế thumbnail thu hút", "A/B testing hình ảnh", "Phân tích CTR để cải thiện"],
-    },
-  },
-  {
-    title: "Content Writer",
-    desc: "Viết kịch bản chi tiết cho YouTube, social và affiliate funnel.",
+    title: "Biên dịch Kịch bản Video (Việt - Anh)",
+    desc: "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
     img: jobWriter,
+    employmentType: "Fulltime",
+    location: "TP. Hồ Chí Minh",
+    compensation: "Lương + phụ cấp",
     details: {
+      tasks: [
+        "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác (tuỳ định hướng của công ty), đảm bảo văn phong phù hợp với từng quốc gia.",
+        "Phối hợp với team sản xuất để đảm bảo chất lượng nội dung.",
+      ],
       requirements: [
-        "Kỹ năng viết tốt, mạch lạc",
-        "Tư duy kể chuyện (Storytelling)",
-        "Biết tiếng Anh là lợi thế",
+        "Cẩn thận, tỉ mỉ, sắp xếp công việc hợp lý, khoa học. Có khả năng làm việc nhóm, độc lập.",
+        "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên tại vị trí tương đương.",
+        "Ưu tiên ứng viên tốt nghiệp chuyên ngành Biên phiên dịch, thông thạo ngoại ngữ.",
       ],
       benefits: [
-        "Nâng cao tư duy nội dung",
-        "Làm việc remote linh hoạt",
-        "Thưởng theo dự án",
+        "Lương cứng + Phụ cấp gửi xe.",
+        "Thưởng theo thành tích của Team.",
+        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
+        "Được trang bị máy tính khi làm việc.",
+        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn.",
       ],
+    },
+  },
+  {
+    title: "Video Editor Dựng phim",
+    desc: "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản đã định cho các dự án nội dung.",
+    img: jobVideo,
+    employmentType: "Fulltime",
+    location: "TP. Hồ Chí Minh",
+    compensation: "Lương + phụ cấp",
+    details: {
       tasks: [
-        "Viết kịch bản video chi tiết",
-        "Sáng tạo nội dung quảng cáo",
-        "Biên tập lại các nội dung cũ",
+        "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản đã định.",
+        "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh (voice-over, nhạc nền, sound effects).",
+        "Thực hiện các thao tác xử lý hậu kỳ cơ bản (chỉnh màu, làm sạch âm thanh) trong Adobe Premiere Pro.",
+      ],
+      requirements: [
+        "Thành thạo Capcut, Canva là một lợi thế.",
+        "Có khả năng quản lý dự án tốt, làm việc cẩn thận, chi tiết và có trách nhiệm cao với sản phẩm.",
+        "Ưu tiên ứng viên có kinh nghiệm tối thiểu 1 năm làm Video Editor, ưu tiên kinh nghiệm làm video cho các kênh YouTube có nội dung quốc tế.",
+      ],
+      benefits: [
+        "Lương cứng + Phụ cấp gửi xe.",
+        "Thưởng theo thành tích của Team.",
+        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
+        "Được trang bị máy tính khi làm việc.",
+        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn.",
+      ],
+    },
+  },
+  {
+    title: "Cộng tác viên Biên tập/Chỉnh sửa video",
+    desc: "Thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản, đảm bảo chất lượng chuyển cảnh, âm thanh và hiệu ứng theo từng dự án.",
+    img: jobContent,
+    employmentType: "Freelance/CTV",
+    location: "Online / TP. Hồ Chí Minh",
+    compensation: "Theo dự án",
+    details: {
+      tasks: [
+        "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản của dự án.",
+        "Đảm bảo chất lượng chuyển cảnh, âm thanh và hiệu ứng theo yêu cầu của từng dự án.",
+      ],
+      requirements: [
+        "Có kỹ năng tốt về dựng phim, sử dụng thành thạo các phần mềm như Capcut, Canva.",
+        "Chủ động về thời gian, đáp ứng được deadline của dự án.",
+        "Ưu tiên ứng viên có kinh nghiệm làm video cho các kênh YouTube.",
+      ],
+      benefits: [
+        "Không có lương cứng, thu nhập tính theo sản phẩm/dự án với mức thù lao hấp dẫn.",
+        "Thưởng bổ sung theo thành tích dự án hoặc Team nếu đạt hiệu quả cao.",
+        "Thời gian làm việc linh hoạt, không gò bó.",
+        "Có cơ hội trở thành nhân viên chính thức nếu hiệu quả công việc xuất sắc.",
       ],
     },
   },
@@ -171,9 +132,9 @@ export default function RecruitPage() {
   usePageMeta({
     title: "Tuyển dụng — H2V MEDIA",
     description:
-      "Cơ hội nghề nghiệp tại H2V MEDIA — Gia nhập đội ngũ sáng tạo nội dung số, automation và affiliate marketing quốc tế.",
+      "Cơ hội nghề nghiệp tại H2V MEDIA — Biên dịch kịch bản, dựng phim và cộng tác viên chỉnh sửa video.",
     ogTitle: "Tuyển dụng — H2V MEDIA",
-    ogDescription: "Gia nhập H2V MEDIA cùng kiến tạo nội dung số hàng đầu.",
+    ogDescription: "Gia nhập H2V MEDIA cùng đội ngũ biên dịch, dựng phim và sản xuất nội dung số.",
   });
 
   return (
@@ -246,9 +207,9 @@ export default function RecruitPage() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <span className="subtitle">Core Benefits</span>
+            <span className="subtitle">Quyền lợi</span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
-              Giá trị chúng tôi <span className="text-primary italic">cam kết</span>
+              Ưu thế khi làm việc tại <span className="text-primary italic">H2V MEDIA</span>
             </h2>
           </motion.div>
 
@@ -285,7 +246,7 @@ export default function RecruitPage() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <span className="subtitle">Open Positions</span>
+            <span className="subtitle">Vị trí tuyển dụng</span>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
               Tham gia <span className="text-primary italic">đội ngũ</span>
             </h2>
@@ -309,7 +270,7 @@ export default function RecruitPage() {
                   />
                   <div className="absolute top-6 left-6">
                     <span className="text-[10px] px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-primary font-black uppercase tracking-widest shadow-sm">
-                      Full-time
+                      {j.employmentType}
                     </span>
                   </div>
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
@@ -325,10 +286,10 @@ export default function RecruitPage() {
                 <div className="p-10 flex-grow flex flex-col">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2 text-[10px] text-primary/50 font-black uppercase tracking-widest">
-                      <Clock size={12} /> Hot role
+                      <MapPin size={12} /> {j.location}
                     </div>
                     <div className="text-[10px] text-primary font-black uppercase tracking-widest">
-                      Thỏa thuận
+                      {j.compensation}
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors tracking-tight">
@@ -391,6 +352,9 @@ export default function RecruitPage() {
                   <h3 className="text-4xl font-black tracking-tighter mb-4">
                     {selectedJob.title}
                   </h3>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">
+                    {selectedJob.employmentType} • {selectedJob.location}
+                  </p>
                   <p className="text-white/60 font-light leading-relaxed">{selectedJob.desc}</p>
                 </div>
               </div>
@@ -407,6 +371,9 @@ export default function RecruitPage() {
                   <h2 className="text-4xl font-black tracking-tighter mb-4">
                     {selectedJob.title}
                   </h2>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/50">
+                    {selectedJob.employmentType} • {selectedJob.location}
+                  </p>
                 </div>
 
                 <div className="space-y-16">
