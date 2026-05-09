@@ -18,9 +18,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import heroBg from "@/assets/goda/br_tuyendung.jpg";
-import jobVideo from "@/assets/jobs/video_editor.png";
-import jobWriter from "@/assets/jobs/writer.png";
-import jobContent from "@/assets/jobs/content_creator.png";
+import jobVideo from "@/assets/jobs/video_real.png";
+import jobWriter from "@/assets/jobs/writer_real.png";
+import jobContent from "@/assets/jobs/content_real.png";
 
 const benefits = [
   {

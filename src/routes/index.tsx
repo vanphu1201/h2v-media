@@ -28,9 +28,9 @@ import ytLogo from "@/assets/partners/youtube.png";
 import metaLogo from "@/assets/partners/meta.png";
 import googleLogo from "@/assets/partners/google_ads.png";
 import tiktokLogo from "@/assets/partners/tiktok.png";
-import huanImg from "@/assets/leaders/huan.png";
-import hoangImg from "@/assets/leaders/hoang.png";
-import tuanImg from "@/assets/leaders/tuan.png";
+import ceoImg from "@/assets/leaders/ceo.png";
+import contentMgrImg from "@/assets/leaders/content_manager.png";
+import ctoImg from "@/assets/leaders/cto.png";
 
 const services = [
   {
@@ -85,12 +85,12 @@ const visionMission = [
   {
     icon: Globe,
     title: "Tầm nhìn",
-    desc: "Trở thành hệ sinh thái truyền thông số và công nghệ tự động hóa hàng đầu của người Việt, nơi các sản phẩm sáng tạo được vận hành bằng dữ liệu và phủ sóng trên thị trường toàn cầu.",
+    desc: "Khẳng định bản sắc trí tuệ và sức sáng tạo Việt trên bản đồ truyền thông thế giới, mang dòng vốn ngoại tệ về phụng sự và thúc đẩy sự hưng thịnh của Quốc gia.",
   },
   {
     icon: Rocket,
     title: "Sứ mệnh",
-    desc: "Tiên phong ứng dụng công nghệ để mở rộng giới hạn sáng tạo, mang đến nội dung giải trí chất lượng cho khán giả và những giải pháp tăng trưởng đo lường được cho đối tác.",
+    desc: "Hợp lực cùng 1,000 nhân sự Việt kiến tạo sự nghiệp thịnh vượng trên nền tảng Internet Global, nâng tầm vị thế lao động tri thức trong kỷ nguyên số.",
   },
 ];
 
@@ -106,21 +106,21 @@ const leadership = [
     name: "Mr Phan Thanh Vy",
     role: "CEO",
     badge: "CEO",
-    img: huanImg,
+    img: ceoImg,
     desc: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số và quản lý hệ thống tự động hoá. Người truyền cảm hứng và dẫn dắt H2V Media vươn ra biển lớn.",
   },
   {
     name: "Mrs Lê Thị Thanh Thảo",
     role: "Trưởng phòng Nội dung",
     badge: "CONTENT",
-    img: hoangImg,
+    img: contentMgrImg,
     desc: "Nữ thủ lĩnh sáng tạo với bề dày kinh nghiệm trong việc định hình, quản lý và phát triển các hệ thống nội dung triệu view, luôn nhạy bén với xu hướng toàn cầu.",
   },
   {
     name: "Mr Lê Đặng Hiếu",
-    role: "Giám Đốc Technical",
+    role: "Giám Đốc Kỹ Thuật",
     badge: "TECH",
-    img: tuanImg,
+    img: ctoImg,
     desc: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong việc thiết kế và vận hành các hệ thống tự động hoá đa nền tảng, đảm bảo hạ tầng kỹ thuật ưu việt giúp bứt phá giới hạn cho các dịch vụ số.",
   },
 ];
@@ -599,12 +599,12 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="aspect-[3/2] bg-white rounded-[2rem] flex items-center justify-center p-8 hover:shadow-elegant transition-smooth border border-transparent hover:border-primary/10 grayscale-[0.8] hover:grayscale-0"
+                className="aspect-[3/2] bg-white rounded-[2rem] flex items-center justify-center p-8 hover:shadow-glow transition-smooth border border-transparent hover:border-primary/30 grayscale-0 group"
               >
                 <img
                   src={p.logo}
                   alt={p.name}
-                  className="max-w-full max-h-full object-contain opacity-40 group-hover:opacity-100 transition-smooth"
+                  className="max-w-[70%] max-h-[70%] object-contain opacity-100 group-hover:scale-110 transition-smooth"
                 />
               </motion.div>
             ))}
