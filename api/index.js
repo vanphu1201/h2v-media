@@ -1,4 +1,4 @@
-import { fetch } from "../dist/server/server.js";
+import server from "../dist/server/server.js";
 
 export default async function handler(req, res) {
   // Chuyển đổi Node.js request sang Web Request cho TanStack Start
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   });
 
   try {
-    const response = await fetch(webReq);
+    const response = await server.fetch(webReq);
 
     // Chuyển đổi Web Response ngược lại Node.js response cho Vercel
     res.status(response.status);
