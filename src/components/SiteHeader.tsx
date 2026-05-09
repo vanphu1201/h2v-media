@@ -35,7 +35,11 @@ export function SiteHeader() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? "bg-white/90 backdrop-blur-2xl border-b border-border/10 py-3 shadow-elegant" : "bg-transparent py-6"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-xl shadow-glow group-hover:scale-105 transition-smooth">H</div>
+          <img
+            src="/h2v-icon.svg"
+            alt="H2V Media"
+            className="h-12 w-12 object-contain drop-shadow-[0_10px_18px_rgba(255,73,0,0.28)] group-hover:scale-105 transition-smooth"
+          />
           <div className="flex flex-col leading-none">
             <span className={`font-black text-2xl tracking-tighter transition-colors duration-500 ${scrolled ? "text-[#040E27]" : "text-white"}`}>
               H2V <span className={scrolled ? "text-primary italic" : "text-white italic"}>MEDIA</span>

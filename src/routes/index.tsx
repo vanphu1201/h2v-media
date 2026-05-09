@@ -81,6 +81,19 @@ const values = [
   },
 ];
 
+const visionMission = [
+  {
+    icon: Globe,
+    title: "Tầm nhìn",
+    desc: "Trở thành hệ sinh thái truyền thông số và công nghệ tự động hóa hàng đầu của người Việt, nơi các sản phẩm sáng tạo được vận hành bằng dữ liệu và phủ sóng trên thị trường toàn cầu.",
+  },
+  {
+    icon: Rocket,
+    title: "Sứ mệnh",
+    desc: "Tiên phong ứng dụng công nghệ để mở rộng giới hạn sáng tạo, mang đến nội dung giải trí chất lượng cho khán giả và những giải pháp tăng trưởng đo lường được cho đối tác.",
+  },
+];
+
 const partners = [
   { name: "YouTube", logo: ytLogo },
   { name: "Facebook", logo: metaLogo },
@@ -339,6 +352,31 @@ export default function HomePage() {
                 vững trên không gian số toàn cầu, mang trí tuệ Việt vươn tầm quốc tế.
               </p>
             </motion.div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-32">
+            {visionMission.map((item, i) => (
+              <motion.article
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.15 }}
+                className="relative overflow-hidden rounded-[2.5rem] bg-[#040E27] p-10 md:p-12 text-white shadow-elegant"
+              >
+                <div className="absolute inset-y-0 right-0 w-1.5 bg-primary" />
+                <div className="absolute inset-x-0 bottom-0 h-px bg-white/10" />
+                <div className="relative z-10">
+                  <div className="mb-8 flex items-center gap-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-primary">
+                      <item.icon size={28} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-3xl font-black tracking-tighter">{item.title}</h3>
+                  </div>
+                  <p className="text-lg font-light leading-relaxed text-white/60">{item.desc}</p>
+                </div>
+              </motion.article>
+            ))}
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">

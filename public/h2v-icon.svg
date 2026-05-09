@@ -1,0 +1,44 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>H2V Media Icon</title>
+  <defs>
+    <linearGradient id="frame" x1="72" y1="92" x2="300" y2="414" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF003D" />
+      <stop offset="0.48" stop-color="#FF4B00" />
+      <stop offset="1" stop-color="#FF9100" />
+    </linearGradient>
+    <linearGradient id="arrow" x1="206" y1="384" x2="440" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF1F00" />
+      <stop offset="0.58" stop-color="#FF7900" />
+      <stop offset="1" stop-color="#FFC400" />
+    </linearGradient>
+    <linearGradient id="bars" x1="100" y1="452" x2="286" y2="275" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F00032" />
+      <stop offset="1" stop-color="#FF7A00" />
+    </linearGradient>
+    <filter id="shadow" x="31" y="74" width="420" height="392" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#55000F" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path
+      d="M74 100C84 92 98 90 111 97L283 197C301 207 312 226 312 247V265C312 286 301 305 283 315L110 415C97 422 82 420 72 412C62 404 56 391 56 376V136C56 121 63 108 74 100Z"
+      fill="url(#frame)"
+    />
+    <path
+      d="M132 171C132 158 146 150 157 157L238 205C250 212 257 224 257 238V259C257 273 250 285 238 292L157 339C146 346 132 338 132 325V171Z"
+      fill="white"
+    />
+    <path
+      d="M76 400L269 279L306 304L117 437C97 451 70 437 70 412C70 407 72 403 76 400Z"
+      fill="url(#arrow)"
+    />
+    <path
+      d="M228 334L358 207L334 198C320 193 320 174 334 169L433 133C445 129 456 140 452 152L416 253C411 266 393 267 387 255L377 233L265 366L228 334Z"
+      fill="url(#arrow)"
+    />
+    <path d="M113 343C113 335 119 329 127 329H153C161 329 167 335 167 343V432C167 440 161 446 153 446H127C119 446 113 440 113 432V343Z" fill="url(#bars)" />
+    <path d="M181 318C181 310 187 304 195 304H221C229 304 235 310 235 318V432C235 440 229 446 221 446H195C187 446 181 440 181 432V318Z" fill="url(#bars)" />
+    <path d="M249 286C249 278 255 272 263 272H289C297 272 303 278 303 286V432C303 440 297 446 289 446H263C255 446 249 440 249 432V286Z" fill="url(#bars)" />
+  </g>
+</svg>

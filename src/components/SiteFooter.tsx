@@ -10,7 +10,11 @@ export function SiteFooter() {
         <div className="grid lg:grid-cols-4 gap-16 mb-20">
           <div className="lg:col-span-2">
             <a href="/" className="flex items-center gap-3 mb-8 group">
-              <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white font-black text-2xl shadow-glow transition-smooth">H</div>
+              <img
+                src="/h2v-icon.svg"
+                alt="H2V Media"
+                className="h-14 w-14 object-contain drop-shadow-[0_10px_18px_rgba(255,73,0,0.28)] transition-smooth"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-black text-2xl tracking-tighter">H2V <span className="text-primary">MEDIA</span></span>
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Excellence or Nothing</span>
