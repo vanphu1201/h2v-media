@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
-    "vercel-build": "vite build",
+    "build:ssr": "vite build",
+    "build": "npm run build:ssr && node scripts/prerender-vercel.mjs",
+    "vercel-build": "npm run build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
