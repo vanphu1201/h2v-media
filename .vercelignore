@@ -1,12 +1,12 @@
 .git
 .github
 .lovable
+.nitro
 .tanstack
+.vercel
+.vscode
 .wrangler
 node_modules
 dist
 .output
-api
 build_error.txt
-README.md
-components.json
