@@ -6,10 +6,15 @@ export function SiteFooter() {
       <div className="container mx-auto px-6 pt-24 pb-12">
         <div className="grid lg:grid-cols-4 gap-16 mb-20">
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-3 mb-8">
+            <a href="/" className="flex items-center gap-4 mb-8">
+              <img 
+                src="/src/assets/logo-globe-dark.png" 
+                alt="H2V Logo" 
+                className="w-14 h-14 object-contain mix-blend-screen" 
+              />
               <div className="flex flex-col leading-none">
-                <span className="font-black text-2xl tracking-tighter">
-                  H2V <span className="text-blue-500">MEDIA</span>
+                <span className="font-black text-2xl tracking-tighter text-white">
+                  H2V <span className="text-primary italic">MEDIA</span>
                 </span>
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40 mt-1">
                   International Excellence

@@ -122,8 +122,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <SiteHeader />
 
-      {/* Hero Section - Optimized spacing */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 h2v-gradient text-white overflow-hidden min-h-[85vh] flex items-center">
+      {/* Hero Section - Full Screen */}
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 h2v-gradient text-white overflow-hidden min-h-screen flex items-center">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary rounded-full blur-[180px]" />
         </div>
@@ -311,25 +311,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Partners - Infinite Marquee */}
-      <section id="dt" className="py-24 bg-white border-y border-slate-100 overflow-hidden">
-        <div className="container-tight mb-12">
+      {/* Partners - Infinite Marquee (Enhanced) */}
+      <section id="dt" className="py-32 bg-white border-y border-slate-100 overflow-hidden">
+        <div className="container-tight mb-16">
           <FadeIn>
             <div className="text-center">
-              <h3 className="text-2xl font-black text-[#040e27]">Đối tác chiến lược</h3>
+              <h3 className="text-3xl font-black text-[#040e27]">Đối tác chiến lược</h3>
             </div>
           </FadeIn>
         </div>
         
-        <div className="relative flex overflow-x-hidden group">
+        <div className="relative flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div 
-            className="flex gap-16 md:gap-32 items-center whitespace-nowrap"
-            animate={{ x: [0, -1035] }}
+            className="flex gap-20 md:gap-40 items-center whitespace-nowrap py-4"
+            animate={{ x: [0, -1200] }}
             transition={{ 
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 25,
                 ease: "linear",
               }
             }}
@@ -339,7 +339,7 @@ export default function HomePage() {
                 <img 
                   src={p.logo} 
                   alt={p.name} 
-                  className="h-10 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110" 
+                  className="h-16 md:h-24 w-auto object-contain transition-all duration-500 hover:scale-125 filter-none" 
                 />
               </div>
             ))}

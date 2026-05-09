@@ -37,7 +37,13 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-tight flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-4">
+          <img 
+            src={scrolled ? "/src/assets/logo-globe-light.png" : "/src/assets/logo-globe-dark.png"} 
+            alt="H2V Logo" 
+            className={`w-12 h-12 object-contain ${scrolled ? "mix-blend-multiply" : "mix-blend-screen"}`} 
+            loading="eager"
+          />
           <div className="flex flex-col leading-none">
             <span className={`font-black text-2xl tracking-tighter ${scrolled ? "text-foreground" : "text-white"}`}>
               H2V <span className="text-primary italic">MEDIA</span>
