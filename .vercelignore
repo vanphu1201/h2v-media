@@ -1,0 +1,10 @@
+.git
+.github
+.lovable
+.tanstack
+.wrangler
+node_modules
+dist
+.output
+README.md
+components.json
