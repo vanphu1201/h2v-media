@@ -58,39 +58,39 @@ const services = [
 const visionMission = [
   {
     title: "Tầm nhìn",
-    desc: "Trở thành hệ sinh thái truyền thông số và công nghệ tự động hóa hàng đầu, đưa sản phẩm sáng tạo Việt phủ sóng toàn cầu.",
+    desc: "Khẳng định vị thế trí tuệ và sự sáng tạo Việt Nam trên bản đồ số thế giới, kiến tạo dòng ngoại tệ mạnh mẽ phục vụ cho sự hưng thịnh của Quốc gia.",
   },
   {
     title: "Sứ mệnh",
-    desc: "Tiên phong ứng dụng công nghệ để bứt phá giới hạn sáng tạo, mang lại giá trị thực chất cho khán giả và đối tác.",
+    desc: "Khai phá tiềm năng Internet toàn cầu, tạo dựng cơ hội nghề nghiệp và thu nhập bền vững cho hàng ngàn người Việt trong kỷ nguyên kinh tế số.",
   },
 ];
 
 const values = [
-  { title: "Sáng tạo", desc: "Liên tục đổi mới, phá vỡ mọi giới hạn." },
-  { title: "Trách nhiệm", desc: "Cống hiến nội dung mang giá trị tích cực." },
-  { title: "Hiệu quả", desc: "Tối ưu quy trình, đạt kết quả vượt trội." },
-  { title: "Đột phá", desc: "Dám nghĩ, dám làm, tạo bước nhảy vọt." },
+  { title: "Sáng tạo", desc: "Liên tục đổi mới, phá vỡ mọi giới hạn để dẫn đầu xu hướng." },
+  { title: "Trách nhiệm", desc: "Cống hiến nội dung mang giá trị tích cực và bền vững cho cộng đồng." },
+  { title: "Hiệu quả", desc: "Tối ưu hóa mọi quy trình bằng công nghệ để đạt kết quả vượt trội." },
+  { title: "Đột phá", desc: "Dám nghĩ, dám làm, tạo bước nhảy vọt trong lĩnh vực MMO toàn cầu." },
 ];
 
 const leadership = [
   {
-    name: "Ông Phan Thanh Vy",
+    name: "Mr. Phan Thanh Vy",
     role: "CEO",
     img: ceoImg,
-    bio: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số.",
+    bio: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số và quản lý hệ thống tự động hoá. Người truyền cảm hứng và dẫn dắt H2V Media vươn ra biển lớn.",
   },
   {
-    name: "Bà Lê Thị Thanh Thảo",
+    name: "Ms. Lê Thị Thanh Thảo",
     role: "Trưởng phòng Nội dung",
     img: contentMgrImg,
-    bio: "Lãnh đạo sáng tạo với bề dày kinh nghiệm trong phát triển các hệ thống nội dung triệu view.",
+    bio: "Nữ thủ lĩnh sáng tạo với bề dày kinh nghiệm trong việc định hình, quản lý và phát triển các hệ thống nội dung triệu view, luôn nhạy bén với xu hướng toàn cầu.",
   },
   {
-    name: "Ông Lê Đặng Hiếu",
-    role: "Trưởng phòng Kỹ thuật",
+    name: "Mr. Lê Đặng Hiếu",
+    role: "Giám Đốc Kỹ Thuật",
     img: ctoImg,
-    bio: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong thiết kế hệ thống tự động hoá đa nền tảng.",
+    bio: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong việc thiết kế và vận hành các hệ thống tự động hoá đa nền tảng, đảm bảo hạ tầng kỹ thuật ưu việt giúp bứt phá giới hạn cho các dịch vụ số.",
   },
 ];
 

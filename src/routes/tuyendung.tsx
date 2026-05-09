@@ -50,68 +50,85 @@ const benefits = [
 const jobs = [
   {
     id: "writer",
-    title: "Biên dịch Kịch bản Video",
-    desc: "Biên dịch nội dung kịch bản từ tiếng Việt sang tiếng Anh cho các dự án YouTube quốc tế.",
+    title: "Biên dịch Kịch bản Video (Việt - Anh)",
+    desc: "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
     img: jobWriter,
     employmentType: "Fulltime",
     location: "TP. Hồ Chí Minh",
-    compensation: "Thỏa thuận",
+    compensation: "Lương cứng + Thưởng",
     details: {
       tasks: [
         "Biên dịch kịch bản video đảm bảo văn phong tự nhiên, chính xác.",
-        "Phối hợp cùng team nội dung để tối ưu hóa kịch bản.",
+        "Phối hợp cùng team sản xuất để đảm bảo chất lượng nội dung.",
         "Theo dõi và cập nhật xu hướng ngôn ngữ quốc tế."
       ],
       requirements: [
-        "Tiếng Anh lưu loát (IELTS 6.5+ hoặc tương đương).",
-        "Có tư duy sáng tạo và khả năng viết lách tốt.",
-        "Ưu tiên ứng viên có kinh nghiệm trong lĩnh vực truyền thông."
+        "Cẩn thận, tỉ mỉ, sắp xếp công việc hợp lý, khoa học. Có khả năng làm việc nhóm, độc lập.",
+        "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên tại vị trí tương đương.",
+        "Ưu tiên ứng viên Tốt nghiệp chuyên ngành Biên phiên dịch, thông thạo ngoại ngữ."
       ],
-      benefits: ["Môi trường làm việc quốc tế.", "Thưởng hiệu quả công việc.", "Trang thiết bị hiện đại."]
+      benefits: [
+        "Lương cứng + Phụ cấp gửi xe.",
+        "Thưởng theo thành tích của Team.",
+        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
+        "Được trang bị máy tính khi làm việc.",
+        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn."
+      ]
     },
   },
   {
     id: "editor",
-    title: "Video Editor",
-    desc: "Thực hiện dựng, cắt, ghép video chuyên nghiệp cho các kênh YouTube triệu view.",
+    title: "Video Editor Dựng phim",
+    desc: "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh.",
     img: jobVideo,
     employmentType: "Fulltime",
     location: "TP. Hồ Chí Minh",
-    compensation: "10tr - 20tr",
+    compensation: "Lương cứng + Thưởng",
     details: {
       tasks: [
-        "Dựng video theo kịch bản và yêu cầu từ Team Leader.",
-        "Xử lý âm thanh, hình ảnh và hiệu ứng bắt mắt.",
+        "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng video theo cấu trúc kịch bản đã định.",
+        "Thực hiện các thao tác xử lý hậu kỳ cơ bản (chỉnh màu, làm sạch âm thanh) trong Adobe Premiere Pro.",
         "Đảm bảo tiến độ và chất lượng video đầu ra."
       ],
       requirements: [
-        "Sử dụng thành thạo Premiere, After Effects hoặc Capcut PC.",
-        "Có gu thẩm mỹ tốt và khả năng kể chuyện qua hình ảnh.",
-        "Có kinh nghiệm dựng video nội dung YouTube là một lợi thế."
+        "Thành thạo Capcut, Canva là một lợi thế.",
+        "Có khả năng quản lý dự án tốt, làm việc cẩn thận, chi tiết và có trách nhiệm cao.",
+        "Ưu tiên ứng viên có kinh nghiệm tối thiểu 1 năm làm Video Editor cho YouTube quốc tế."
       ],
-      benefits: ["Lương thưởng theo KPI.", "Học hỏi công nghệ Automation mới nhất.", "Tea break và team building."]
+      benefits: [
+        "Lương cứng + Phụ cấp gửi xe.",
+        "Thưởng theo thành tích của Team.",
+        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
+        "Được trang bị máy tính khi làm việc.",
+        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn."
+      ]
     },
   },
   {
     id: "content",
-    title: "CTV Biên tập video",
-    desc: "Hỗ trợ sản xuất và chỉnh sửa video dự án theo hình thức cộng tác viên.",
+    title: "CTV Biên tập/Chỉnh sửa video",
+    desc: "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản dự án.",
     img: jobContent,
-    employmentType: "Freelance",
-    location: "Toàn quốc",
+    employmentType: "Freelance/CTV",
+    location: "Online / TP. Hồ Chí Minh",
     compensation: "Theo sản phẩm",
     details: {
       tasks: [
-        "Nhận tài liệu và dựng video theo định hướng dự án.",
+        "Đảm bảo chất lượng chuyển cảnh, âm thanh, và hiệu ứng theo yêu cầu của từng dự án.",
         "Chỉnh sửa video dựa trên phản hồi từ bộ phận kiểm soát.",
         "Đáp ứng thời hạn giao sản phẩm."
       ],
       requirements: [
-        "Có máy tính cấu hình ổn định.",
-        "Sử dụng tốt các phần mềm dựng video cơ bản.",
-        "Làm việc có trách nhiệm và đúng deadline."
+        "Có kỹ năng tốt về dựng phim, sử dụng thành thạo các phần mềm như Capcut, Canva.",
+        "Chủ động về thời gian, đáp ứng được deadline của dự án.",
+        "Ưu tiên ứng viên có kinh nghiệm làm video cho các kênh YouTube."
       ],
-      benefits: ["Nguồn việc ổn định, lâu dài.", "Thù lao hấp dẫn trả theo tuần/tháng.", "Làm việc linh hoạt tại nhà."]
+      benefits: [
+        "Thu nhập tính theo sản phẩm/dự án với mức thù lao hấp dẫn.",
+        "Thưởng bổ sung theo thành tích dự án/Team nếu đạt hiệu quả cao.",
+        "Thời gian làm việc linh hoạt, không gò bó.",
+        "Cơ hội trở thành nhân viên chính thức nếu hiệu quả xuất sắc."
+      ]
     },
   },
 ];
@@ -322,7 +339,13 @@ export default function RecruitPage() {
                 </div>
                 
                 <div className="relative z-10">
-                  <p className="text-[10px] font-bold text-slate-400 mb-6 uppercase tracking-widest">Ứng tuyển ngay tại: contact@h2vmedia.com</p>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-6">LIÊN HỆ NỘP HỒ SƠ</h4>
+                  <p className="text-[11px] text-slate-500 mb-8 leading-relaxed">
+                    Ứng viên quan tâm vui lòng gửi CV về email: <span className="text-primary font-bold">contact@h2vmedia.com</span><br /><br />
+                    Tiêu đề mail viết theo cấu trúc: <br />
+                    <span className="font-bold text-foreground">Vị trí ứng tuyển_Họ và tên ứng viên</span><br />
+                    (VD: Biên dịch Kịch bản Video_ Nguyễn Văn A)
+                  </p>
                   <a
                     href="mailto:contact@h2vmedia.com"
                     className="w-full py-6 rounded-[2rem] bg-primary text-white font-black uppercase tracking-widest text-sm text-center block hover:bg-blue-600 transition-all shadow-xl shadow-primary/20 active:scale-95"
