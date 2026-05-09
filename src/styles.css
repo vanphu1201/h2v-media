@@ -1,148 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-@import "tailwindcss" source(none);
-@source "../src";
-@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-:root {
-  --radius: 1.25rem;
-  --background: oklch(0.99 0.002 240);
-  --foreground: oklch(0.1 0.02 240);
+@theme {
+  --font-sans: 'Be Vietnam Pro', system-ui, sans-serif;
   
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1 0.02 240);
+  --color-background: #ffffff;
+  --color-foreground: #020617; /* Navy 950 */
   
-  --primary: oklch(0.4 0.12 250); /* Adjusted for better contrast */
-  --primary-foreground: oklch(1 0 0);
-  --primary-glow: oklch(0.5 0.15 250);
+  --color-primary: #2563eb; /* Blue 600 - Vitality */
+  --color-primary-foreground: #ffffff;
   
-  --secondary: oklch(0.96 0.01 240);
-  --secondary-foreground: oklch(0.2 0.02 240);
+  --color-secondary: #f8fafc; /* Slate 50 */
+  --color-secondary-foreground: #475569; /* Slate 600 */
   
-  --accent: oklch(0.88 0.08 90); /* Muted Gold */
-  --accent-foreground: oklch(0.1 0.02 240);
+  --color-muted: #f1f5f9; /* Slate 100 */
+  --color-muted-foreground: #64748b; /* Slate 500 */
   
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.45 0.02 240);
+  --color-accent: #1e293b; /* Slate 800 */
+  --color-accent-foreground: #ffffff;
   
-  --border: oklch(0.2 0.02 240 / 0.08);
+  --color-border: #e2e8f0; /* Slate 200 */
   
-  --gradient-primary: linear-gradient(135deg, oklch(0.5 0.15 250) 0%, oklch(0.3 0.1 250) 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
-  
-  --shadow-elegant: 0 30px 60px -20px oklch(0.1 0.02 240 / 0.08);
-  --shadow-glow: 0 10px 30px -5px oklch(0.4 0.12 250 / 0.15);
-  
-  --transition-smooth: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+  --radius-4xl: 4rem;
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
   
-  h1, h2, h3, h4 { 
-    font-family: 'Outfit', sans-serif;
+  h1, h2, h3, h4 {
+    letter-spacing: -0.04em;
+    line-height: 1.05;
     font-weight: 800;
-    letter-spacing: -0.04em; 
-    line-height: 1.1;
   }
 }
 
 @layer utilities {
-  .bg-glass {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  
-  .bg-glass-dark {
-    background: rgba(10, 15, 30, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 20px oklch(0.5 0.15 250 / 0.4);
-  }
-
-  .shadow-elegant { box-shadow: var(--shadow-elegant); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .transition-smooth { transition: var(--transition-smooth); }
-  
   .section-padding {
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
   
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .transition-smooth {
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .bg-primary-gradient {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  }
+  
+  .shadow-elegant {
+    box-shadow: 0 20px 40px -15px rgba(2, 6, 23, 0.1);
+  }
+  
+  .shadow-vital {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.2);
+  }
+  
   .subtitle {
     text-transform: uppercase;
-    letter-spacing: 0.4em;
-    font-size: 0.7rem;
-    font-weight: 800;
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--color-primary);
-    opacity: 0.5;
     margin-bottom: 1.5rem;
     display: block;
   }

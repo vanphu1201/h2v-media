@@ -17,7 +17,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import heroBg from "@/assets/goda/br_tuyendung.jpg";
+
 import jobVideo from "@/assets/jobs/video_real.png";
 import jobWriter from "@/assets/jobs/writer_real.png";
 import jobContent from "@/assets/jobs/content_real.png";
@@ -26,292 +26,237 @@ const benefits = [
   {
     icon: Wallet,
     title: "Thu nhập hấp dẫn",
-    desc: "Thưởng cá nhân xuất sắc, thưởng theo kết quả hoạt động của Team, thưởng tháng lương thứ 13, thưởng Lễ Tết, thưởng sinh nhật. Ngoài ra còn phụ cấp theo tình hình công việc.",
+    desc: "Thưởng cá nhân xuất sắc, thưởng theo kết quả hoạt động của Team, thưởng tháng lương thứ 13, thưởng Lễ Tết.",
+    color: "bg-emerald-50 text-emerald-600",
   },
   {
     icon: GraduationCap,
     title: "Đào tạo phát triển",
-    desc: "Đào tạo nội bộ các kĩ năng mềm, kĩ năng, chuyên môn theo từng dự án, từng phòng ban. Được cử đi đào tạo nâng cao chuyên môn, nghiệp vụ,...",
+    desc: "Đào tạo nội bộ các kĩ năng mềm, chuyên môn theo từng dự án. Được cử đi đào tạo nâng cao nghiệp vụ.",
+    color: "bg-blue-50 text-blue-600",
   },
   {
     icon: Users,
-    title: "Môi trường làm việc",
-    desc: "Năng động, thân thiện, sáng tạo và kích thích khả năng phát triển cá nhân cao.",
+    title: "Môi trường năng động",
+    desc: "Thân thiện, sáng tạo và kích thích khả năng phát triển cá nhân cao trong môi trường làm việc trẻ trung.",
+    color: "bg-orange-50 text-orange-600",
   },
   {
     icon: ShieldCheck,
-    title: "Các chế độ khác",
-    desc: "Đóng bảo hiểm, tuân thủ các chế độ theo Luật lao động hiện hành: nghỉ phép, thai sản,...",
+    title: "Chế độ đãi ngộ",
+    desc: "Đóng bảo hiểm, tuân thủ các chế độ theo Luật lao động hiện hành: nghỉ phép, thai sản, du lịch.",
+    color: "bg-purple-50 text-purple-600",
   },
 ];
 
 const jobs = [
   {
-    title: "Biên dịch Kịch bản Video (Việt - Anh)",
-    desc: "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
+    title: "Biên dịch Kịch bản Video",
+    desc: "Biên dịch kịch bản video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
     img: jobWriter,
     employmentType: "Fulltime",
     location: "TP. Hồ Chí Minh",
     compensation: "Lương + phụ cấp",
     details: {
       tasks: [
-        "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác (tuỳ định hướng của công ty), đảm bảo văn phong phù hợp với từng quốc gia.",
+        "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh.",
         "Phối hợp với team sản xuất để đảm bảo chất lượng nội dung.",
       ],
       requirements: [
-        "Cẩn thận, tỉ mỉ, sắp xếp công việc hợp lý, khoa học. Có khả năng làm việc nhóm, độc lập.",
-        "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên tại vị trí tương đương.",
-        "Ưu tiên ứng viên tốt nghiệp chuyên ngành Biên phiên dịch, thông thạo ngoại ngữ.",
+        "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên.",
+        "Thông thạo ngoại ngữ, tốt nghiệp chuyên ngành Biên phiên dịch.",
       ],
-      benefits: [
-        "Lương cứng + Phụ cấp gửi xe.",
-        "Thưởng theo thành tích của Team.",
-        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
-        "Được trang bị máy tính khi làm việc.",
-        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn.",
-      ],
+      benefits: ["Lương cứng + Phụ cấp.", "Thưởng theo thành tích Team.", "Môi trường sáng tạo."],
     },
   },
   {
-    title: "Video Editor Dựng phim",
-    desc: "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản đã định cho các dự án nội dung.",
+    title: "Video Editor",
+    desc: "Thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản đã định cho các dự án nội dung YouTube quốc tế.",
     img: jobVideo,
     employmentType: "Fulltime",
     location: "TP. Hồ Chí Minh",
     compensation: "Lương + phụ cấp",
     details: {
       tasks: [
-        "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản đã định.",
-        "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh (voice-over, nhạc nền, sound effects).",
-        "Thực hiện các thao tác xử lý hậu kỳ cơ bản (chỉnh màu, làm sạch âm thanh) trong Adobe Premiere Pro.",
+        "Tiếp nhận tài liệu và thực hiện dựng video theo kịch bản.",
+        "Chịu trách nhiệm về timeline, cắt ghép, chuyển cảnh mượt mà.",
       ],
       requirements: [
-        "Thành thạo Capcut, Canva là một lợi thế.",
-        "Có khả năng quản lý dự án tốt, làm việc cẩn thận, chi tiết và có trách nhiệm cao với sản phẩm.",
-        "Ưu tiên ứng viên có kinh nghiệm tối thiểu 1 năm làm Video Editor, ưu tiên kinh nghiệm làm video cho các kênh YouTube có nội dung quốc tế.",
+        "Thành thạo Adobe Premiere Pro, Capcut.",
+        "Có kinh nghiệm làm video cho các kênh YouTube quốc tế.",
       ],
-      benefits: [
-        "Lương cứng + Phụ cấp gửi xe.",
-        "Thưởng theo thành tích của Team.",
-        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
-        "Được trang bị máy tính khi làm việc.",
-        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn.",
-      ],
+      benefits: ["Lương cứng + Phụ cấp.", "Thưởng theo KPI.", "Trang bị máy tính cấu hình cao."],
     },
   },
   {
-    title: "Cộng tác viên Biên tập/Chỉnh sửa video",
-    desc: "Thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản, đảm bảo chất lượng chuyển cảnh, âm thanh và hiệu ứng theo từng dự án.",
+    title: "CTV Biên tập video",
+    desc: "Thực hiện dựng, cắt, ghép video theo dự án, đảm bảo chất lượng chuyển cảnh và hiệu ứng theo yêu cầu.",
     img: jobContent,
     employmentType: "Freelance/CTV",
-    location: "Online / TP. Hồ Chí Minh",
+    location: "Online / HCM",
     compensation: "Theo dự án",
     details: {
       tasks: [
-        "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản của dự án.",
-        "Đảm bảo chất lượng chuyển cảnh, âm thanh và hiệu ứng theo yêu cầu của từng dự án.",
+        "Dựng video theo kịch bản của dự án.",
+        "Đảm bảo chất lượng và deadline đề ra.",
       ],
       requirements: [
-        "Có kỹ năng tốt về dựng phim, sử dụng thành thạo các phần mềm như Capcut, Canva.",
-        "Chủ động về thời gian, đáp ứng được deadline của dự án.",
-        "Ưu tiên ứng viên có kinh nghiệm làm video cho các kênh YouTube.",
+        "Sử dụng thành thạo Capcut, Canva.",
+        "Chủ động thời gian, đáp ứng được tiến độ.",
       ],
-      benefits: [
-        "Không có lương cứng, thu nhập tính theo sản phẩm/dự án với mức thù lao hấp dẫn.",
-        "Thưởng bổ sung theo thành tích dự án hoặc Team nếu đạt hiệu quả cao.",
-        "Thời gian làm việc linh hoạt, không gò bó.",
-        "Có cơ hội trở thành nhân viên chính thức nếu hiệu quả công việc xuất sắc.",
-      ],
+      benefits: ["Thù lao hấp dẫn theo sản phẩm.", "Thời gian linh hoạt.", "Thưởng dự án xuất sắc."],
     },
   },
 ];
+
+const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 1, delay, ease: [0.23, 1, 0.32, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default function RecruitPage() {
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[0] | null>(null);
 
   usePageMeta({
     title: "Tuyển dụng — H2V MEDIA",
-    description:
-      "Cơ hội nghề nghiệp tại H2V MEDIA — Biên dịch kịch bản, dựng phim và cộng tác viên chỉnh sửa video.",
-    ogTitle: "Tuyển dụng — H2V MEDIA",
-    ogDescription: "Gia nhập H2V MEDIA cùng đội ngũ biên dịch, dựng phim và sản xuất nội dung số.",
+    description: "Gia nhập H2V MEDIA để cùng kiến tạo tương lai nội dung số.",
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
 
-      <section className="relative h-[80vh] min-h-[600px] flex items-center pt-20 overflow-hidden bg-[#040E27]">
-        <div
-          className="absolute inset-0 z-0 opacity-30 scale-105"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#040E27]/90 via-[#040E27]/60 to-[#040E27] z-10" />
-
-        <div className="container mx-auto px-6 relative z-20">
-          <div className="max-w-4xl">
+      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 left-0 w-full h-full bg-slate-50/50 -skew-y-6 -translate-y-1/2 z-0" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-5xl">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="subtitle text-white/60 mb-6"
+              transition={{ duration: 1 }}
+              className="flex items-center gap-4 mb-8"
             >
-              Careers at H2V Media
+              <div className="w-12 h-px bg-primary" />
+              <span className="subtitle mb-0">Join the Elite</span>
             </motion.div>
-
+            
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="text-6xl md:text-[7rem] font-black text-white leading-[0.9] mb-10 tracking-tighter"
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+              className="text-6xl md:text-[8rem] font-extrabold text-slate-950 leading-[0.9] mb-12 tracking-tighter"
             >
-              Building the <span className="text-gradient italic text-glow">Future</span> of
-              Content.
+              Building the <br />
+              <span className="text-primary italic">Future.</span>
             </motion.h1>
-
+            
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/50 max-w-2xl font-light leading-relaxed mb-12"
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-xl md:text-3xl text-slate-500 mb-16 leading-relaxed font-light max-w-3xl"
             >
-              Gia nhập đội ngũ nhân sự tinh anh, cùng chúng tôi kiến tạo những giá trị số bền
-              vững trên quy mô toàn cầu.
+              Kiến tạo sự nghiệp tri thức toàn cầu cùng đội ngũ nhân sự sáng tạo hàng đầu Việt Nam.
             </motion.p>
-
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 1, delay: 0.6 }}
             >
               <a
                 href="#vt"
-                className="inline-flex items-center gap-4 px-10 py-5 rounded-full bg-primary text-white font-black uppercase tracking-[0.2em] shadow-glow hover:scale-105 transition-smooth"
+                className="inline-flex px-12 py-5 rounded-full bg-slate-950 text-white text-sm font-bold uppercase tracking-widest hover:bg-primary transition-all duration-500 shadow-xl hover:scale-105"
               >
-                Xem các vị trí <ArrowRight size={20} />
+                Xem các vị trí trống
               </a>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section id="ut" className="section-padding bg-white">
+      <section id="ut" className="section-padding bg-slate-50/50">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-24"
-          >
-            <span className="subtitle">Quyền lợi</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
-              Ưu thế khi làm việc tại <span className="text-primary italic">H2V MEDIA</span>
-            </h2>
-          </motion.div>
+          <FadeIn>
+            <div className="text-center mb-24">
+              <span className="subtitle">Benefits</span>
+              <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950">
+                Quyền lợi tại <span className="text-primary italic">H2V.</span>
+              </h2>
+            </div>
+          </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((b, i) => (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-smooth shadow-sm group-hover:shadow-glow">
-                  <b.icon size={28} strokeWidth={1.5} />
+              <FadeIn key={b.title} delay={i * 0.15}>
+                <div className="p-12 rounded-[3rem] bg-white border border-slate-100 hover:border-primary/20 hover:shadow-elegant transition-all duration-700 group h-full">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-primary group-hover:text-white transition-all duration-500 ${b.color}`}>
+                    <b.icon size={28} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-slate-950">{b.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed font-light">{b.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  {b.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed font-light text-sm">
-                  {b.desc}
-                </p>
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="vt" className="section-padding bg-secondary/30 relative overflow-hidden">
+      <section id="vt" className="section-padding">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <span className="subtitle">Vị trí tuyển dụng</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">
-              Tham gia <span className="text-primary italic">đội ngũ</span>
-            </h2>
-          </motion.div>
+          <FadeIn>
+            <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+              <div>
+                <span className="subtitle">Open Positions</span>
+                <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950">
+                  Gia nhập <span className="text-primary italic">đội ngũ.</span>
+                </h2>
+              </div>
+              <div className="h-px w-24 bg-slate-200 hidden md:block" />
+            </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {jobs.map((j, i) => (
-              <motion.article
-                key={j.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="bg-white rounded-[2.5rem] overflow-hidden shadow-elegant hover:shadow-2xl transition-smooth group flex flex-col border border-transparent hover:border-primary/10"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={j.img}
-                    alt={j.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000 ease-out grayscale-[0.3] group-hover:grayscale-0"
-                  />
-                  <div className="absolute top-6 left-6">
-                    <span className="text-[10px] px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-primary font-black uppercase tracking-widest shadow-sm">
-                      {j.employmentType}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                    <button
-                      onClick={() => setSelectedJob(j)}
-                      className="px-8 py-3 bg-white text-primary font-black uppercase tracking-widest rounded-full text-[10px] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
-                    >
-                      Chi tiết công việc
-                    </button>
-                  </div>
-                </div>
-
-                <div className="p-10 flex-grow flex flex-col">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-2 text-[10px] text-primary/50 font-black uppercase tracking-widest">
-                      <MapPin size={12} /> {j.location}
-                    </div>
-                    <div className="text-[10px] text-primary font-black uppercase tracking-widest">
-                      {j.compensation}
+              <FadeIn key={j.title} delay={i * 0.15}>
+                <div 
+                  onClick={() => setSelectedJob(j)}
+                  className="group border border-slate-100 rounded-[3.5rem] overflow-hidden hover:border-primary/40 hover:shadow-elegant transition-all duration-700 bg-white cursor-pointer active:scale-[0.98]"
+                >
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <img
+                      src={j.img}
+                      alt={j.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute top-8 left-8">
+                      <span className="px-5 py-2 rounded-full bg-white text-[12px] font-bold uppercase tracking-widest text-primary shadow-lg">
+                        {j.employmentType}
+                      </span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors tracking-tight">
-                    {j.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed font-light text-sm mb-8 line-clamp-2">
-                    {j.desc}
-                  </p>
-                  <div className="mt-auto pt-8 border-t border-border/40">
-                    <button
-                      onClick={() => setSelectedJob(j)}
-                      className="group/btn flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[#040E27] hover:text-primary transition-colors"
+                  <div className="p-12">
+                    <div className="flex items-center gap-3 text-[13px] uppercase tracking-widest text-slate-500 mb-6 font-bold">
+                      <MapPin size={14} className="text-primary" /> {j.location}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-slate-950 group-hover:text-primary transition-colors">{j.title}</h3>
+                    <p className="text-sm text-slate-500 font-light mb-10 line-clamp-2 leading-relaxed">{j.desc}</p>
+                    <div
+                      className="text-[13px] font-bold uppercase tracking-widest text-slate-950 flex items-center gap-3 group/btn hover:text-primary transition-colors"
                     >
-                      Nộp hồ sơ ngay{" "}
-                      <ArrowRight
-                        size={14}
-                        className="group-hover/btn:translate-x-1 transition-transform"
-                      />
-                    </button>
+                      Xem chi tiết công việc <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform text-primary" />
+                    </div>
                   </div>
                 </div>
-              </motion.article>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -319,185 +264,105 @@ export default function RecruitPage() {
 
       <AnimatePresence>
         {selectedJob && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedJob(null)}
-              className="absolute inset-0 bg-[#040E27]/90 backdrop-blur-xl"
+              className="absolute inset-0 bg-slate-950/20 backdrop-blur-md"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 40 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 40 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-6xl bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[90vh]"
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+              className="relative w-full max-w-5xl bg-white rounded-[3.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
             >
-              <div className="lg:w-[45%] relative h-[300px] lg:h-auto">
-                <img
-                  src={selectedJob.img}
-                  alt={selectedJob.title}
-                  className="w-full h-full object-cover grayscale-[0.2]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#040E27]/80 via-transparent to-transparent" />
-                <button
-                  onClick={() => setSelectedJob(null)}
-                  className="absolute top-8 left-8 lg:hidden w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md text-white flex items-center justify-center"
-                >
-                  <X size={24} />
-                </button>
-                <div className="absolute bottom-12 left-12 right-12 text-white hidden lg:block">
-                  <span className="subtitle text-white/50 mb-4">Job Summary</span>
-                  <h3 className="text-4xl font-black tracking-tighter mb-4">
-                    {selectedJob.title}
-                  </h3>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-4">
-                    {selectedJob.employmentType} • {selectedJob.location}
-                  </p>
-                  <p className="text-white/60 font-light leading-relaxed">{selectedJob.desc}</p>
+              <button
+                onClick={() => setSelectedJob(null)}
+                className="absolute top-8 right-8 z-20 w-12 h-12 rounded-full bg-white border border-slate-100 flex items-center justify-center text-slate-950 hover:bg-slate-50 hover:text-primary transition-all shadow-sm"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="md:w-1/2 p-12 md:p-20 overflow-y-auto border-r border-slate-50">
+                <span className="subtitle text-primary text-[12px] mb-4">Position Details</span>
+                <h3 className="text-5xl font-extrabold mb-6 tracking-tighter text-slate-950">{selectedJob.title}</h3>
+                <div className="flex gap-4 mb-12">
+                  <span className="px-5 py-2 rounded-full bg-slate-100 text-[12px] font-bold uppercase tracking-widest text-slate-600">
+                    {selectedJob.employmentType}
+                  </span>
+                  <span className="px-5 py-2 rounded-full bg-slate-100 text-[12px] font-bold uppercase tracking-widest text-slate-600">
+                    {selectedJob.location}
+                  </span>
+                </div>
+                
+                <div className="space-y-12">
+                  <section>
+                    <h4 className="text-[13px] font-bold uppercase tracking-widest text-primary mb-6 flex items-center gap-3">
+                      <Zap size={14} /> Nhiệm vụ chính
+                    </h4>
+                    <ul className="space-y-4">
+                      {selectedJob.details.tasks.map((t, i) => (
+                        <li key={i} className="text-base text-slate-500 font-light leading-relaxed flex gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary/30 mt-2.5 shrink-0" />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                  <section>
+                    <h4 className="text-[13px] font-bold uppercase tracking-widest text-primary mb-6 flex items-center gap-3">
+                      <Sparkles size={14} /> Yêu cầu
+                    </h4>
+                    <ul className="space-y-4">
+                      {selectedJob.details.requirements.map((r, i) => (
+                        <li key={i} className="text-base text-slate-500 font-light leading-relaxed flex gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary/30 mt-2.5 shrink-0" />
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 </div>
               </div>
 
-              <div className="p-8 md:p-16 lg:w-[55%] overflow-y-auto bg-white custom-scrollbar">
-                <button
-                  onClick={() => setSelectedJob(null)}
-                  className="hidden lg:flex absolute top-12 right-12 w-14 h-14 rounded-2xl bg-secondary hover:bg-primary hover:text-white transition-smooth items-center justify-center text-foreground shadow-sm"
-                >
-                  <X size={28} />
-                </button>
-
-                <div className="lg:hidden mb-12">
-                  <h2 className="text-4xl font-black tracking-tighter mb-4">
-                    {selectedJob.title}
-                  </h2>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-primary/50">
-                    {selectedJob.employmentType} • {selectedJob.location}
-                  </p>
+              <div className="md:w-1/2 p-12 md:p-20 bg-slate-50 flex flex-col justify-between relative">
+                <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+                  <Briefcase className="absolute -bottom-10 -right-10" size={300} />
                 </div>
-
-                <div className="space-y-16">
-                  <section>
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                        <Sparkles size={20} />
-                      </div>
-                      <h4 className="font-bold text-xl tracking-tight">Yêu cầu công việc</h4>
-                    </div>
-                    <ul className="space-y-5">
-                      {selectedJob.details.requirements.map((req, i) => (
-                        <li
-                          key={i}
-                          className="flex gap-4 text-muted-foreground font-light leading-relaxed"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary/30 mt-2.5 shrink-0" />
-                          <span>{req}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section>
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
-                        <Wallet size={20} />
-                      </div>
-                      <h4 className="font-bold text-xl tracking-tight">Quyền lợi ứng viên</h4>
-                    </div>
-                    <ul className="space-y-5">
-                      {selectedJob.details.benefits.map((ben, i) => (
-                        <li
-                          key={i}
-                          className="flex gap-4 text-muted-foreground font-light leading-relaxed"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent/30 mt-2.5 shrink-0" />
-                          <span>{ben}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section>
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-primary">
-                        <Briefcase size={20} />
-                      </div>
-                      <h4 className="font-bold text-xl tracking-tight">Nhiệm vụ chính</h4>
-                    </div>
-                    <ul className="space-y-5">
-                      {selectedJob.details.tasks.map((task, i) => (
-                        <li
-                          key={i}
-                          className="flex gap-4 text-muted-foreground font-light leading-relaxed"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary/30 mt-2.5 shrink-0" />
-                          <span>{task}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
+                
+                <div className="relative z-10">
+                  <h4 className="text-[13px] font-bold uppercase tracking-widest text-slate-950 mb-8">
+                    Quyền lợi ứng viên
+                  </h4>
+                  <ul className="space-y-6 mb-16">
+                    {selectedJob.details.benefits.map((b, i) => (
+                      <li key={i} className="text-base text-slate-900 font-medium leading-relaxed flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-primary">
+                          <ArrowRight size={16} />
+                        </div>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <div className="mt-20 pt-12 border-t border-border/40 flex flex-col sm:flex-row gap-6 items-center">
+                
+                <div className="relative z-10">
+                  <p className="text-xs text-slate-400 mb-6 font-light uppercase tracking-widest">Gửi CV về: contact@h2vmedia.com</p>
                   <a
                     href="mailto:contact@h2vmedia.com"
-                    className="w-full sm:flex-1 inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-[#040E27] text-white font-black uppercase tracking-[0.2em] shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-smooth"
+                    className="w-full py-6 rounded-full bg-primary text-white text-sm font-bold uppercase tracking-widest text-center hover:bg-blue-700 transition-all shadow-vital flex items-center justify-center gap-4 group"
                   >
-                    Nộp hồ sơ ngay <ArrowRight size={20} />
+                    Nộp hồ sơ ngay <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                   </a>
-                  <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest max-w-[200px] text-center sm:text-left">
-                    Hoặc gửi CV về: contact@h2vmedia.com
-                  </p>
                 </div>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-
-      <section id="hs" className="section-padding bg-white">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto bg-[#040E27] rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
-          >
-            <div className="absolute top-0 right-0 p-24 opacity-5 text-white">
-              <Mail size={300} />
-            </div>
-            <div className="relative z-10">
-              <span className="subtitle text-white/40 mb-8">Join the Team</span>
-              <h2 className="text-5xl md:text-[5rem] font-black text-white mb-12 tracking-tighter leading-none">
-                Sẵn sàng kiến tạo <br />{" "}
-                <span className="text-gradient italic text-glow">tương lai?</span>
-              </h2>
-              <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
-                <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-10 text-left">
-                  <Mail className="text-primary mb-6" size={32} />
-                  <div className="text-[10px] text-white/40 font-black uppercase tracking-widest mb-2">
-                    Email
-                  </div>
-                  <div className="text-xl text-white font-bold">contact@h2vmedia.com</div>
-                </div>
-                <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-10 text-left">
-                  <Phone className="text-primary mb-6" size={32} />
-                  <div className="text-[10px] text-white/40 font-black uppercase tracking-widest mb-2">
-                    Hotline
-                  </div>
-                  <div className="text-xl text-white font-bold">+84 907 696 177</div>
-                </div>
-              </div>
-              <a
-                href="mailto:contact@h2vmedia.com"
-                className="inline-flex items-center gap-4 px-12 py-6 rounded-full bg-primary text-white font-black uppercase tracking-[0.2em] shadow-glow hover:scale-105 transition-smooth"
-              >
-                Gửi CV của bạn <ArrowRight size={24} />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <SiteFooter />
     </div>
