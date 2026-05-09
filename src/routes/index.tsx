@@ -58,9 +58,27 @@ import hoangImg from "@/assets/leaders/hoang.png";
 import tuanImg from "@/assets/leaders/tuan.png";
 
 const leadership = [
-  { name: "Nguyễn Văn Huân", role: "Chủ tịch Hội đồng Quản trị", badge: "COB", img: huanImg },
-  { name: "Vũ Việt Hoàng", role: "Giám đốc Công ty", badge: "CEO", img: hoangImg },
-  { name: "Hồ Anh Tuấn", role: "Giám đốc Vận hành", badge: "COO", img: tuanImg },
+  { 
+    name: "Mr Phan Thanh Vy", 
+    role: "CEO", 
+    badge: "CEO", 
+    img: huanImg, 
+    desc: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số và quản lý hệ thống tự động hoá. Người truyền cảm hứng và dẫn dắt H2V Media vươn ra biển lớn."
+  },
+  { 
+    name: "Mrs Lê Thị Thanh Thảo", 
+    role: "Trưởng phòng Nội dung", 
+    badge: "CONTENT", 
+    img: hoangImg, 
+    desc: "Nữ thủ lĩnh sáng tạo với bề dày kinh nghiệm trong việc định hình, quản lý và phát triển các hệ thống nội dung triệu view, luôn nhạy bén với xu hướng toàn cầu."
+  },
+  { 
+    name: "Mr Lê Đặng Hiếu", 
+    role: "Giám Đốc Technical", 
+    badge: "TECH", 
+    img: tuanImg, 
+    desc: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong việc thiết kế và vận hành các hệ thống tự động hoá đa nền tảng, đảm bảo hạ tầng kỹ thuật ưu việt giúp bứt phá giới hạn cho các dịch vụ số."
+  },
 ];
 
 import { useInView } from "react-intersection-observer";
@@ -256,7 +274,10 @@ function HomePage() {
                 </div>
                 <div className="px-4 text-center">
                   <h3 className="text-2xl font-bold mb-2 tracking-tight group-hover:text-primary transition-colors duration-500">{member.name}</h3>
-                  <p className="text-muted-foreground text-[10px] font-black uppercase tracking-widest opacity-60">{member.role}</p>
+                  <p className="text-muted-foreground text-[10px] font-black uppercase tracking-widest opacity-60 mb-4">{member.role}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed font-light line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    {member.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
