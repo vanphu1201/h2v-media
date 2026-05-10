@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoDark from "@/assets/logo-globe-dark.png";
 
 export function SiteFooter() {
   return (
@@ -8,7 +9,7 @@ export function SiteFooter() {
           <div className="lg:col-span-2">
             <a href="/" className="flex items-center gap-4 mb-8">
               <img 
-                src="/src/assets/logo-globe-dark.png" 
+                src={logoDark} 
                 alt="H2V Logo" 
                 className="w-14 h-14 object-contain mix-blend-screen" 
               />

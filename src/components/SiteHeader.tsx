@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoLight from "@/assets/logo-globe-light.png";
+import logoDark from "@/assets/logo-globe-dark.png";
 
 const homeLinks = [
   { href: "#vct", label: "Về chúng tôi" },
@@ -39,7 +41,7 @@ export function SiteHeader() {
       <div className="container-tight flex items-center justify-between">
         <a href="/" className="flex items-center gap-4">
           <img 
-            src={scrolled ? "/src/assets/logo-globe-light.png" : "/src/assets/logo-globe-dark.png"} 
+            src={scrolled ? logoLight : logoDark} 
             alt="H2V Logo" 
             className={`w-12 h-12 object-contain ${scrolled ? "mix-blend-multiply" : "mix-blend-screen"}`} 
             loading="eager"

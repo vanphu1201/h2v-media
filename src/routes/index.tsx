@@ -34,12 +34,11 @@ import metaLogo from "@/assets/partners/meta.png";
 import googleLogo from "@/assets/partners/google_ads.png";
 import tiktokLogo from "@/assets/partners/tiktok.png";
 
-import activity1 from "@/assets/activities/office.png";
-import activity2 from "@/assets/activities/teambuilding.png";
-import activity3 from "@/assets/activities/workshop.png";
-import activity4 from "@/assets/activities/celebration.png";
-import activity5 from "@/assets/activities/brainstorming.png";
-import activity6 from "@/assets/activities/tech_setup.png";
+import activity1 from "@/assets/activities/activity_1.jpg";
+import activity2 from "@/assets/activities/activity_2.jpg";
+import activity3 from "@/assets/activities/activity_3.jpg";
+import activity4 from "@/assets/activities/activity_4.jpg";
+import activity5 from "@/assets/activities/activity_5.jpg";
 
 const services = [
   {
@@ -109,12 +108,11 @@ const partners = [
 ];
 
 const companyActivities = [
-  { id: 1, img: activity1, title: "Môi trường làm việc hiện đại" },
-  { id: 2, img: activity2, title: "Hoạt động Team Building" },
-  { id: 3, img: activity3, title: "Đào tạo & Phát triển" },
-  { id: 4, img: activity4, title: "Sự kiện & Kỷ niệm" },
-  { id: 5, img: activity5, title: "Brainstorming sáng tạo" },
-  { id: 6, img: activity6, title: "Công nghệ tiên phong" },
+  { id: 1, img: activity1, title: "Họp chiến lược nội dung" },
+  { id: 2, img: activity2, title: "Gắn kết đội ngũ" },
+  { id: 3, img: activity3, title: "Môi trường làm việc tập trung" },
+  { id: 4, img: activity4, title: "Đào tạo chuyên môn" },
+  { id: 5, img: activity5, title: "Hội thảo bứt phá" },
 ];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
