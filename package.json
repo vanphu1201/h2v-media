@@ -1,7 +1,10 @@
 {
   "name": "h2v-media-react",
   "private": true,
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/i18n.ts",
+    "**/*.css"
+  ],
   "type": "module",
   "packageManager": "npm@11.5.1",
   "scripts": {
