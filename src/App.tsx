@@ -3,6 +3,7 @@ import RecruitPage from "@/routes/tuyendung";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { motion } from "framer-motion";
 
 function NotFoundPage() {
   usePageMeta({

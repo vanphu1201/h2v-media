@@ -14,6 +14,8 @@ i18n
       en: { translation: enTranslations },
     },
     fallbackLng: 'vi',
+    supportedLngs: ['vi', 'en'],
+    load: 'languageOnly',
     interpolation: {
       escapeValue: false,
     },
