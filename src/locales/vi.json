@@ -134,7 +134,7 @@
       "contact_desc": "Ứng viên quan tâm vui lòng gửi CV về email:",
       "email_subject_desc": "Tiêu đề mail viết theo cấu trúc:",
       "subject_structure": "Vị trí ứng tuyển_Họ và tên ứng viên",
-      "example_subject": "(VD: Biên dịch Kịch bản Video_ Nguyễn Văn A)",
+      "example_subject": "(VD: Content Marketing_ Nguyễn Văn A)",
       "apply_now": "Nộp hồ sơ ngay"
     }
   },
@@ -154,7 +154,7 @@
       }
     },
     "writer": {
-      "title": "Biên dịch Kịch bản Video (Việt - Anh)",
+      "title": "Content Marketing",
       "desc": "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
       "tasks": {
         "0": "Biên dịch kịch bản video đảm bảo văn phong tự nhiên, chính xác.",
@@ -168,7 +168,7 @@
       }
     },
     "editor": {
-      "title": "Video Editor Dựng phim",
+      "title": "Video Editor",
       "desc": "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh.",
       "tasks": {
         "0": "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng video theo cấu trúc kịch bản đã định.",

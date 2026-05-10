@@ -134,7 +134,7 @@
       "contact_desc": "Interested candidates please send CV to email:",
       "email_subject_desc": "Email subject structure:",
       "subject_structure": "Position_Full Name",
-      "example_subject": "(e.g., Video Script Translator_ Nguyễn Văn A)",
+      "example_subject": "(e.g., Content Marketing_ Nguyễn Văn A)",
       "apply_now": "Apply Now"
     }
   },
@@ -154,7 +154,7 @@
       }
     },
     "writer": {
-      "title": "Video Script Translator (Viet - Eng)",
+      "title": "Content Marketing",
       "desc": "Translate video script content from Vietnamese to English and other languages, ensuring style fits each country.",
       "tasks": {
         "0": "Translate video scripts ensuring natural, accurate style.",
