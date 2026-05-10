@@ -34,6 +34,13 @@ import metaLogo from "@/assets/partners/meta.png";
 import googleLogo from "@/assets/partners/google_ads.png";
 import tiktokLogo from "@/assets/partners/tiktok.png";
 
+import activity1 from "@/assets/activities/office.png";
+import activity2 from "@/assets/activities/teambuilding.png";
+import activity3 from "@/assets/activities/workshop.png";
+import activity4 from "@/assets/activities/celebration.png";
+import activity5 from "@/assets/activities/brainstorming.png";
+import activity6 from "@/assets/activities/tech_setup.png";
+
 const services = [
   {
     icon: Youtube,
@@ -99,6 +106,15 @@ const partners = [
   { name: "Meta", logo: metaLogo },
   { name: "TikTok", logo: tiktokLogo },
   { name: "Google Ads", logo: googleLogo },
+];
+
+const companyActivities = [
+  { id: 1, img: activity1, title: "Môi trường làm việc hiện đại" },
+  { id: 2, img: activity2, title: "Hoạt động Team Building" },
+  { id: 3, img: activity3, title: "Đào tạo & Phát triển" },
+  { id: 4, img: activity4, title: "Sự kiện & Kỷ niệm" },
+  { id: 5, img: activity5, title: "Brainstorming sáng tạo" },
+  { id: 6, img: activity6, title: "Công nghệ tiên phong" },
 ];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
@@ -308,6 +324,52 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Company Activities - Infinite Loop */}
+      <section className="py-24 bg-secondary/30 overflow-hidden">
+        <div className="container-tight mb-16">
+          <FadeIn>
+            <div className="text-center">
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Hành trình & Văn hoá</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground mb-4">Hoạt động công ty</h3>
+              <p className="text-slate-500 font-light max-w-2xl mx-auto">
+                Kiến tạo môi trường làm việc năng động, sáng tạo và đầy nhiệt huyết, nơi mỗi cá nhân đều có cơ hội bứt phá và tỏa sáng.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+        
+        <div className="relative flex overflow-x-hidden">
+          <motion.div 
+            className="flex gap-8 items-center whitespace-nowrap py-10"
+            animate={{ x: [0, -1800] }}
+            transition={{ 
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 40,
+                ease: "linear",
+              }
+            }}
+          >
+            {[...companyActivities, ...companyActivities, ...companyActivities].map((activity, i) => (
+              <div 
+                key={`${activity.id}-${i}`} 
+                className="relative w-[350px] md:w-[450px] aspect-[16/10] rounded-[2.5rem] overflow-hidden group shrink-0 shadow-xl"
+              >
+                <img 
+                  src={activity.img} 
+                  alt={activity.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                  <h4 className="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{activity.title}</h4>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
