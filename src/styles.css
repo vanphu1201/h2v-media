@@ -26,6 +26,11 @@
   --radius-3xl: 2.5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 @layer base {
   body {
     background-color: var(--color-background);
