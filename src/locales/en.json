@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "about": "About Us",
+    "ecosystem": "Ecosystem",
+    "culture": "Culture",
+    "partners": "Partners",
+    "contact": "Contact",
+    "recruit": "Recruitment",
+    "advantage": "Advantages",
+    "job_positions": "Open Positions",
+    "contact_now": "Contact Now"
+  },
+  "hero": {
+    "sub": "International Digital Agency",
+    "title_main": "H2V MEDIA",
+    "title_italic": "CREATING DIGITAL VALUE",
+    "desc": "Empowering Vietnamese intelligence and creativity globally through media ecosystems and automation technology.",
+    "cta_contact": "Contact Now",
+    "cta_about": "About Us"
+  },
+  "about": {
+    "sub": "About H2V Media",
+    "title": "Pioneering the Creation of",
+    "title_accent": "Sustainable Digital Value",
+    "desc": "H2V Media is a pioneering creative technology company specializing in high-quality content production and digital marketing solutions for the international market. We believe in the power of Vietnamese intelligence on the global digital map.",
+    "vision": "Vision",
+    "vision_desc": "Asserting Vietnamese intelligence and creativity on the world digital map, creating a strong foreign currency flow for the prosperity of the Nation.",
+    "mission": "Mission",
+    "mission_desc": "Exploiting global Internet potential, creating career opportunities and sustainable income for thousands of Vietnamese in the digital economic era.",
+    "reach": "Monthly Reach"
+  },
+  "services": {
+    "sub": "Service Ecosystem",
+    "title": "Multi-platform Media Solutions",
+    "yt": {
+      "title": "YouTube Content Creation",
+      "desc": "Developing and managing professional YouTube channels, optimizing content to attract millions of views globally."
+    },
+    "auto": {
+      "title": "Automation Systems",
+      "desc": "Designing and operating smart automation processes, helping optimize time and enhance performance."
+    },
+    "aff": {
+      "title": "International Affiliate Marketing",
+      "desc": "Expanding product marketing to international markets through affiliate networks and smart strategies."
+    }
+  },
+  "values": {
+    "sub": "Core Values",
+    "title": "Foundation for Breakthroughs",
+    "desc": "At H2V Media, we build our culture on continuous creativity and responsibility to the community.",
+    "items": {
+      "creative": { "title": "Creativity", "desc": "Constantly innovating, breaking all limits to lead trends." },
+      "responsibility": { "title": "Responsibility", "desc": "Dedicate content that brings positive and sustainable value to the community." },
+      "effective": { "title": "Effectiveness", "desc": "Optimize all processes with technology to achieve outstanding results." },
+      "breakthrough": { "title": "Breakthrough", "desc": "Dare to think, dare to do, creating a leap in the global MMO field." }
+    }
+  },
+  "leadership": {
+    "sub": "Leadership",
+    "title": "Strategic Leading Team",
+    "ceo_bio": "Strategic expert with years of experience in digital media and automation management. Inspirer and leader guiding H2V Media to the global stage.",
+    "content_role": "Head of Content",
+    "content_bio": "Creative leader with extensive experience in shaping, managing, and developing million-view content systems, always keen on global trends.",
+    "cto_role": "CTO",
+    "cto_bio": "Technology expert with deep experience in designing and operating multi-platform automation systems, ensuring superior technical infrastructure to break limits for digital services."
+  },
+  "activities": {
+    "sub": "Journey & Culture",
+    "title": "Company Activities",
+    "desc": "Creating a dynamic, creative, and passionate working environment where every individual has the opportunity to break through and shine.",
+    "items": {
+      "strategy": "Content Strategy Meeting",
+      "engagement": "Team Engagement",
+      "focus": "Focused Working Environment",
+      "training": "Professional Training",
+      "workshop": "Breakthrough Workshop"
+    }
+  },
+  "partners_section": {
+    "title": "Strategic Partners"
+  },
+  "contact_section": {
+    "sub": "Contact",
+    "title": "Ready for a Breakthrough?",
+    "desc": "Send us a message or call now to get the best solution for your business.",
+    "email_label": "Official Email",
+    "phone_label": "Hotline 24/7",
+    "form_title": "Send Message",
+    "name_label": "Full Name",
+    "phone_field_label": "Phone Number",
+    "submit": "Send Message Now"
+  },
+  "footer": {
+    "desc": "H2V MEDIA TECHNOLOGY JOINT STOCK COMPANY — Creating sustainable digital value through content creation, automation, and international marketing.",
+    "categories": "Categories",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "recruit_page": {
+    "sub": "Careers at H2V Media",
+    "title": "JOIN THE TEAM",
+    "title_accent": "CREATING THE FUTURE",
+    "desc": "H2V Media is always looking for young talents who are eager to assert themselves and bring Vietnamese intelligence to the world.",
+    "benefits_sub": "Advantages at H2V",
+    "benefits_title": "Talent Development Environment",
+    "benefits_items": {
+      "salary": {
+        "title": "Attractive Income",
+        "desc": "Competitive salary and bonus policy, project bonuses, holidays, and 13th-month salary."
+      },
+      "career": {
+        "title": "Career Path",
+        "desc": "Opportunities for intensive training and clear advancement for talented personnel."
+      },
+      "env": {
+        "title": "Dynamic Environment",
+        "desc": "Young, creative culture, valuing individual worth and cohesion."
+      },
+      "policy": {
+        "title": "Benefits Policy",
+        "desc": "Full insurance, annual travel, and other attractive benefits."
+      }
+    },
+    "jobs_sub": "Recruitment",
+    "jobs_title": "Positions Waiting for You",
+    "job_detail": {
+      "sub": "Job Details",
+      "tasks": "Job Description",
+      "requirements": "Candidate Requirements",
+      "benefits": "Benefits",
+      "contact_title": "CONTACT FOR APPLICATION",
+      "contact_desc": "Interested candidates please send CV to email:",
+      "email_subject_desc": "Email subject structure:",
+      "subject_structure": "Position_Full Name",
+      "example_subject": "(e.g., Video Script Translator_ Nguyễn Văn A)",
+      "apply_now": "Apply Now"
+    }
+  },
+  "jobs": {
+    "common": {
+      "salary_plus": "Fixed Salary + Bonus",
+      "by_product": "By Product",
+      "view_detail": "Job Details",
+      "location_hcm": "Ho Chi Minh City",
+      "location_online_hcm": "Online / Ho Chi Minh City",
+      "benefits": {
+        "fixed_salary": "Fixed Salary + Parking Allowance",
+        "team_bonus": "Bonus based on Team performance",
+        "holiday_bonus": "Company-wide bonuses for Holidays, Tet, and birthdays",
+        "equipment": "Equipped with computer for work",
+        "training": "Participate in internal and external professional training courses"
+      }
+    },
+    "writer": {
+      "title": "Video Script Translator (Viet - Eng)",
+      "desc": "Translate video script content from Vietnamese to English and other languages, ensuring style fits each country.",
+      "tasks": {
+        "0": "Translate video scripts ensuring natural, accurate style.",
+        "1": "Coordinate with production team to ensure content quality.",
+        "2": "Monitor and update international language trends."
+      },
+      "reqs": {
+        "0": "Careful, meticulous, organized. Capable of teamwork and independent work.",
+        "1": "Priority for candidates with 1 year experience in similar positions.",
+        "2": "Priority for graduates in Translation/Interpretation, fluent in foreign languages."
+      }
+    },
+    "editor": {
+      "title": "Video Editor",
+      "desc": "Mainly responsible for timeline, cutting, smooth transitions, and syncing visuals with audio.",
+      "tasks": {
+        "0": "Receive materials (scripts, footage, audio) and perform video editing according to set structure.",
+        "1": "Perform basic post-production (color correction, audio cleaning) in Adobe Premiere Pro.",
+        "2": "Ensure progress and quality of output videos."
+      },
+      "reqs": {
+        "0": "Proficiency in Capcut, Canva is an advantage.",
+        "1": "Good project management skills, careful, detailed, and highly responsible.",
+        "2": "Priority for candidates with at least 1 year experience as Video Editor for international YouTube channels."
+      }
+    },
+    "content": {
+      "title": "Video Editing Collaborator",
+      "desc": "Receive materials and perform editing, cutting, merging videos according to project structure.",
+      "tasks": {
+        "0": "Ensure quality of transitions, audio, and effects according to project requirements.",
+        "1": "Edit videos based on feedback from control department.",
+        "2": "Meet product delivery deadlines."
+      },
+      "reqs": {
+        "0": "Good video editing skills, proficient in software like Capcut, Canva.",
+        "1": "Proactive with time, able to meet project deadlines.",
+        "2": "Priority for candidates with experience making videos for YouTube channels."
+      },
+      "benefits": {
+        "0": "Income based on product/project with attractive remuneration.",
+        "1": "Additional bonus based on project/Team performance if effective.",
+        "2": "Flexible working hours, no constraints.",
+        "3": "Opportunity to become official employee if performance is excellent."
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   ExternalLink,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -40,65 +41,8 @@ import activity3 from "@/assets/activities/activity_3.jpg";
 import activity4 from "@/assets/activities/activity_4.jpg";
 import activity5 from "@/assets/activities/activity_5.jpg";
 
-const services = [
-  {
-    icon: Youtube,
-    title: "Sáng tạo nội dung YouTube",
-    desc: "Phát triển và quản lý kênh YouTube chuyên nghiệp, tối ưu hóa nội dung thu hút hàng triệu lượt xem trên toàn cầu.",
-    img: ytImg,
-  },
-  {
-    icon: Workflow,
-    title: "Hệ thống Automation",
-    desc: "Thiết kế và vận hành quy trình tự động hóa thông minh, giúp tối ưu thời gian và tăng cường hiệu suất.",
-    img: autoImg,
-  },
-  {
-    icon: Globe,
-    title: "Tiếp thị liên kết Quốc tế",
-    desc: "Mở rộng tiếp thị sản phẩm ra thị trường quốc tế thông qua mạng lưới liên kết và chiến lược thông minh.",
-    img: affImg,
-  },
-];
 
-const visionMission = [
-  {
-    title: "Tầm nhìn",
-    desc: "Khẳng định vị thế trí tuệ và sự sáng tạo Việt Nam trên bản đồ số thế giới, kiến tạo dòng ngoại tệ mạnh mẽ phục vụ cho sự hưng thịnh của Quốc gia.",
-  },
-  {
-    title: "Sứ mệnh",
-    desc: "Khai phá tiềm năng Internet toàn cầu, tạo dựng cơ hội nghề nghiệp và thu nhập bền vững cho hàng ngàn người Việt trong kỷ nguyên kinh tế số.",
-  },
-];
 
-const values = [
-  { title: "Sáng tạo", desc: "Liên tục đổi mới, phá vỡ mọi giới hạn để dẫn đầu xu hướng." },
-  { title: "Trách nhiệm", desc: "Cống hiến nội dung mang giá trị tích cực và bền vững cho cộng đồng." },
-  { title: "Hiệu quả", desc: "Tối ưu hóa mọi quy trình bằng công nghệ để đạt kết quả vượt trội." },
-  { title: "Đột phá", desc: "Dám nghĩ, dám làm, tạo bước nhảy vọt trong lĩnh vực MMO toàn cầu." },
-];
-
-const leadership = [
-  {
-    name: "Mr. Phan Thanh Vy",
-    role: "CEO",
-    img: ceoImg,
-    bio: "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số và quản lý hệ thống tự động hoá. Người truyền cảm hứng và dẫn dắt H2V Media vươn ra biển lớn.",
-  },
-  {
-    name: "Ms. Lê Thị Thanh Thảo",
-    role: "Trưởng phòng Nội dung",
-    img: contentMgrImg,
-    bio: "Nữ thủ lĩnh sáng tạo với bề dày kinh nghiệm trong việc định hình, quản lý và phát triển các hệ thống nội dung triệu view, luôn nhạy bén với xu hướng toàn cầu.",
-  },
-  {
-    name: "Mr. Lê Đặng Hiếu",
-    role: "Giám Đốc Kỹ Thuật",
-    img: ctoImg,
-    bio: "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong việc thiết kế và vận hành các hệ thống tự động hoá đa nền tảng, đảm bảo hạ tầng kỹ thuật ưu việt giúp bứt phá giới hạn cho các dịch vụ số.",
-  },
-];
 
 const partners = [
   { name: "YouTube", logo: ytLogo },
@@ -107,13 +51,6 @@ const partners = [
   { name: "Google Ads", logo: googleLogo },
 ];
 
-const companyActivities = [
-  { id: 1, img: activity1, title: "Họp chiến lược nội dung" },
-  { id: 2, img: activity2, title: "Gắn kết đội ngũ" },
-  { id: 3, img: activity3, title: "Môi trường làm việc tập trung" },
-  { id: 4, img: activity4, title: "Đào tạo chuyên môn" },
-  { id: 5, img: activity5, title: "Hội thảo bứt phá" },
-];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
@@ -127,6 +64,76 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 );
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Youtube,
+      title: t("services.yt.title"),
+      desc: t("services.yt.desc"),
+      img: ytImg,
+    },
+    {
+      icon: Workflow,
+      title: t("services.auto.title"),
+      desc: t("services.auto.desc"),
+      img: autoImg,
+    },
+    {
+      icon: Globe,
+      title: t("services.aff.title"),
+      desc: t("services.aff.desc"),
+      img: affImg,
+    },
+  ];
+
+  const visionMission = [
+    {
+      title: t("about.vision"),
+      desc: t("about.vision_desc"),
+    },
+    {
+      title: t("about.mission"),
+      desc: t("about.mission_desc"),
+    },
+  ];
+
+  const valuesData = [
+    { title: t("values.items.creative.title"), desc: t("values.items.creative.desc") },
+    { title: t("values.items.responsibility.title"), desc: t("values.items.responsibility.desc") },
+    { title: t("values.items.effective.title"), desc: t("values.items.effective.desc") },
+    { title: t("values.items.breakthrough.title"), desc: t("values.items.breakthrough.desc") },
+  ];
+
+  const leadership = [
+    {
+      name: "Mr. Phan Thanh Vy",
+      role: "CEO",
+      img: ceoImg,
+      bio: t("leadership.ceo_bio"),
+    },
+    {
+      name: "Ms. Lê Thị Thanh Thảo",
+      role: t("leadership.content_role"),
+      img: contentMgrImg,
+      bio: t("leadership.content_bio"),
+    },
+    {
+      name: "Mr. Lê Đặng Hiếu",
+      role: t("leadership.cto_role"),
+      img: ctoImg,
+      bio: t("leadership.cto_bio"),
+    },
+  ];
+
+  const companyActivities = [
+    { id: 1, img: activity1, title: t("activities.items.strategy") },
+    { id: 2, img: activity2, title: t("activities.items.engagement") },
+    { id: 3, img: activity3, title: t("activities.items.focus") },
+    { id: 4, img: activity4, title: t("activities.items.training") },
+    { id: 5, img: activity5, title: t("activities.items.workshop") },
+  ];
+
   usePageMeta({
     title: "H2V MEDIA — Kiến tạo giá trị số toàn cầu",
     description: "H2V Media là công ty công nghệ sáng tạo tiên phong, chuyên sản xuất nội dung chất lượng cao và giải pháp tiếp thị số.",
@@ -150,7 +157,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest mb-6 border border-primary/20"
             >
-              <Sparkles size={12} /> International Digital Agency
+              <Sparkles size={12} /> {t("hero.sub")}
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -158,8 +165,8 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl lg:text-[5.5rem] font-black leading-[1.1] mb-8 tracking-tighter"
             >
-              H2V MEDIA <br />
-              <span className="text-primary italic">KIẾN TẠO GIÁ TRỊ SỐ</span>
+              {t("hero.title_main")} <br />
+              <span className="text-primary italic">{t("hero.title_italic")}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -167,7 +174,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg lg:text-xl text-white/70 mb-10 leading-relaxed max-w-2xl font-light"
             >
-              Mang trí tuệ và sự sáng tạo của người Việt vươn tầm thế giới qua hệ sinh thái truyền thông và công nghệ tự động hóa.
+              {t("hero.desc")}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -179,13 +186,13 @@ export default function HomePage() {
                 href="#lh"
                 className="px-8 py-4 rounded-2xl bg-primary text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95 flex items-center gap-2"
               >
-                Liên hệ ngay <ArrowRight size={16} />
+                {t("hero.cta_contact")} <ArrowRight size={16} />
               </a>
               <a
                 href="#vct"
                 className="px-8 py-4 rounded-2xl border border-white/20 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all active:scale-95"
               >
-                Về chúng tôi
+                {t("hero.cta_about")}
               </a>
             </motion.div>
           </div>
@@ -197,13 +204,13 @@ export default function HomePage() {
         <div className="container-tight">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <FadeIn>
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Về H2V Media</span>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("about.sub")}</span>
               <h2 className="text-4xl lg:text-5xl font-black mb-10 text-foreground leading-tight">
-                Tiên phong kiến tạo <br />
-                <span className="text-primary">giá trị số bền vững</span>
+                {t("about.title")} <br />
+                <span className="text-primary">{t("about.title_accent")}</span>
               </h2>
               <p className="text-lg text-slate-500 leading-relaxed font-light mb-12">
-                H2V Media là công ty công nghệ sáng tạo tiên phong, chuyên sản xuất nội dung chất lượng cao và giải pháp tiếp thị số, vươn tầm thị trường quốc tế. Chúng tôi tin vào sức mạnh của trí tuệ Việt trên bản đồ số toàn cầu.
+                {t("about.desc")}
               </p>
               
               <div className="space-y-8">
@@ -241,8 +248,8 @@ export default function HomePage() {
         <div className="container-tight">
           <FadeIn>
             <div className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Hệ sinh thái dịch vụ</span>
-              <h3 className="text-4xl lg:text-5xl font-black text-foreground">Giải pháp truyền thông đa nền tảng</h3>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("services.sub")}</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground">{t("services.title")}</h3>
             </div>
           </FadeIn>
 
@@ -272,17 +279,17 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/3">
               <FadeIn>
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Giá trị văn hoá</span>
-                <h3 className="text-4xl font-black mb-8 leading-tight">Nền tảng cho sự bứt phá</h3>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("values.sub")}</span>
+                <h3 className="text-4xl font-black mb-8 leading-tight">{t("values.title")}</h3>
                 <p className="text-slate-500 font-light leading-relaxed mb-10">
-                  Tại H2V Media, chúng tôi xây dựng văn hóa dựa trên sự sáng tạo không ngừng và trách nhiệm với cộng đồng.
+                  {t("values.desc")}
                 </p>
                 <div className="w-20 h-1.5 bg-primary rounded-full" />
               </FadeIn>
             </div>
             
             <div className="lg:w-2/3 grid sm:grid-cols-2 gap-8">
-              {values.map((v, i) => (
+              {valuesData.map((v, i) => (
                 <FadeIn key={v.title} delay={i * 0.1}>
                   <div className="p-10 rounded-[2.5rem] bg-secondary hover:bg-white hover:goda-shadow transition-all duration-500 border border-transparent hover:border-primary/5">
                     <h4 className="text-xl font-bold mb-4 flex items-center gap-3">
@@ -301,8 +308,8 @@ export default function HomePage() {
       <section id="ld" className="section-padding bg-secondary/50">
         <div className="container-tight text-center mb-24">
           <FadeIn>
-            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Leadership</span>
-            <h3 className="text-4xl lg:text-5xl font-black text-foreground">Đội ngũ dẫn dắt chiến lược</h3>
+            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("leadership.sub")}</span>
+            <h3 className="text-4xl lg:text-5xl font-black text-foreground">{t("leadership.title")}</h3>
           </FadeIn>
         </div>
 
@@ -330,10 +337,10 @@ export default function HomePage() {
         <div className="container-tight mb-16">
           <FadeIn>
             <div className="text-center">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Hành trình & Văn hoá</span>
-              <h3 className="text-4xl lg:text-5xl font-black text-foreground mb-4">Hoạt động công ty</h3>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("activities.sub")}</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground mb-4">{t("activities.title")}</h3>
               <p className="text-slate-500 font-light max-w-2xl mx-auto">
-                Kiến tạo môi trường làm việc năng động, sáng tạo và đầy nhiệt huyết, nơi mỗi cá nhân đều có cơ hội bứt phá và tỏa sáng.
+                {t("activities.desc")}
               </p>
             </div>
           </FadeIn>
@@ -376,7 +383,7 @@ export default function HomePage() {
         <div className="container-tight mb-16">
           <FadeIn>
             <div className="text-center">
-              <h3 className="text-3xl font-black text-[#040e27]">Đối tác chiến lược</h3>
+              <h3 className="text-3xl font-black text-[#040e27]">{t("partners_section.title")}</h3>
             </div>
           </FadeIn>
         </div>
@@ -414,10 +421,10 @@ export default function HomePage() {
             <div className="lg:w-1/2 p-12 lg:p-20 h2v-gradient text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 translate-x-1/4" />
               <div className="relative z-10">
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">Liên hệ</span>
-                <h3 className="text-4xl lg:text-5xl font-black mb-12 leading-tight">Bạn đã sẵn sàng để bứt phá?</h3>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-8 block">{t("contact_section.sub")}</span>
+                <h3 className="text-4xl lg:text-5xl font-black mb-12 leading-tight">{t("contact_section.title")}</h3>
                 <p className="text-white/60 mb-16 leading-relaxed font-light text-lg">
-                  Hãy gửi tin nhắn hoặc gọi ngay cho chúng tôi để nhận được giải pháp tối ưu nhất cho doanh nghiệp của bạn.
+                  {t("contact_section.desc")}
                 </p>
                 
                 <div className="space-y-10">
@@ -426,7 +433,7 @@ export default function HomePage() {
                       <Mail size={28} />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Email Official</div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">{t("contact_section.email_label")}</div>
                       <div className="text-xl font-bold">contact@h2vmedia.com</div>
                     </div>
                   </div>
@@ -435,7 +442,7 @@ export default function HomePage() {
                       <Phone size={28} />
                     </div>
                     <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">Hotline 24/7</div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">{t("contact_section.phone_label")}</div>
                       <div className="text-xl font-bold">+84 907 696 177</div>
                     </div>
                   </div>
@@ -444,18 +451,18 @@ export default function HomePage() {
             </div>
             
             <div className="lg:w-1/2 p-12 lg:p-20">
-              <h4 className="text-3xl font-black mb-10">Gửi lời nhắn</h4>
+              <h4 className="text-3xl font-black mb-10">{t("contact_section.form_title")}</h4>
               <div className="space-y-8">
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">Họ và tên</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">{t("contact_section.name_label")}</label>
                   <input type="text" className="w-full px-6 py-4 rounded-2xl bg-secondary border border-slate-100 focus:border-primary focus:outline-none transition-all font-medium" placeholder="Nguyễn Văn A" />
                 </div>
                 <div>
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">Số điện thoại</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">{t("contact_section.phone_field_label")}</label>
                   <input type="text" className="w-full px-6 py-4 rounded-2xl bg-secondary border border-slate-100 focus:border-primary focus:outline-none transition-all font-medium" placeholder="090 123 4567" />
                 </div>
                 <button className="w-full py-5 rounded-2xl bg-primary text-white font-black uppercase tracking-widest text-sm shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
-                  Gửi tin nhắn ngay
+                  {t("contact_section.submit")}
                 </button>
               </div>
             </div>

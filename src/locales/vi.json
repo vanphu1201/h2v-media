@@ -1,0 +1,205 @@
+{
+  "nav": {
+    "about": "Về chúng tôi",
+    "ecosystem": "Hệ sinh thái",
+    "culture": "Văn hóa",
+    "partners": "Đối tác",
+    "contact": "Liên hệ",
+    "recruit": "Tuyển dụng",
+    "advantage": "Ưu thế",
+    "job_positions": "Vị trí tuyển dụng",
+    "contact_now": "Liên hệ ngay"
+  },
+  "hero": {
+    "sub": "International Digital Agency",
+    "title_main": "H2V MEDIA",
+    "title_italic": "KIẾN TẠO GIÁ TRỊ SỐ",
+    "desc": "Mang trí tuệ và sự sáng tạo của người Việt vươn tầm thế giới qua hệ sinh thái truyền thông và công nghệ tự động hóa.",
+    "cta_contact": "Liên hệ ngay",
+    "cta_about": "Về chúng tôi"
+  },
+  "about": {
+    "sub": "Về H2V Media",
+    "title": "Tiên phong kiến tạo",
+    "title_accent": "giá trị số bền vững",
+    "desc": "H2V Media là công ty công nghệ sáng tạo tiên phong, chuyên sản xuất nội dung chất lượng cao và giải pháp tiếp thị số, vươn tầm thị trường quốc tế. Chúng tôi tin vào sức mạnh của trí tuệ Việt trên bản đồ số toàn cầu.",
+    "vision": "Tầm nhìn",
+    "vision_desc": "Khẳng định vị thế trí tuệ và sự sáng tạo Việt Nam trên bản đồ số thế giới, kiến tạo dòng ngoại tệ mạnh mẽ phục vụ cho sự hưng thịnh của Quốc gia.",
+    "mission": "Sứ mệnh",
+    "mission_desc": "Khai phá tiềm năng Internet toàn cầu, tạo dựng cơ hội nghề nghiệp và thu nhập bền vững cho hàng ngàn người Việt trong kỷ nguyên kinh tế số.",
+    "reach": "Monthly Reach"
+  },
+  "services": {
+    "sub": "Hệ sinh thái dịch vụ",
+    "title": "Giải pháp truyền thông đa nền tảng",
+    "yt": {
+      "title": "Sáng tạo nội dung YouTube",
+      "desc": "Phát triển và quản lý kênh YouTube chuyên nghiệp, tối ưu hóa nội dung thu hút hàng triệu lượt xem trên toàn cầu."
+    },
+    "auto": {
+      "title": "Hệ thống Automation",
+      "desc": "Thiết kế và vận hành quy trình tự động hóa thông minh, giúp tối ưu thời gian và tăng cường hiệu suất."
+    },
+    "aff": {
+      "title": "Tiếp thị liên kết Quốc tế",
+      "desc": "Mở rộng tiếp thị sản phẩm ra thị trường quốc tế thông qua mạng lưới liên kết và chiến lược thông minh."
+    }
+  },
+  "values": {
+    "sub": "Giá trị văn hoá",
+    "title": "Nền tảng cho sự bứt phá",
+    "desc": "Tại H2V Media, chúng tôi xây dựng văn hóa dựa trên sự sáng tạo không ngừng và trách nhiệm với cộng đồng.",
+    "items": {
+      "creative": { "title": "Sáng tạo", "desc": "Liên tục đổi mới, phá vỡ mọi giới hạn để dẫn đầu xu hướng." },
+      "responsibility": { "title": "Trách nhiệm", "desc": "Cống hiến nội dung mang giá trị tích cực và bền vững cho cộng đồng." },
+      "effective": { "title": "Hiệu quả", "desc": "Tối ưu hóa mọi quy trình bằng công nghệ để đạt kết quả vượt trội." },
+      "breakthrough": { "title": "Đột phá", "desc": "Dám nghĩ, dám làm, tạo bước nhảy vọt trong lĩnh vực MMO toàn cầu." }
+    }
+  },
+  "leadership": {
+    "sub": "Leadership",
+    "title": "Đội ngũ dẫn dắt chiến lược",
+    "ceo_bio": "Chuyên gia định hướng chiến lược với nhiều năm kinh nghiệm trong lĩnh vực truyền thông số và quản lý hệ thống tự động hoá. Người truyền cảm hứng và dẫn dắt H2V Media vươn ra biển lớn.",
+    "content_role": "Trưởng phòng Nội dung",
+    "content_bio": "Nữ thủ lĩnh sáng tạo với bề dày kinh nghiệm trong việc định hình, quản lý và phát triển các hệ thống nội dung triệu view, luôn nhạy bén với xu hướng toàn cầu.",
+    "cto_role": "Giám Đốc Kỹ Thuật",
+    "cto_bio": "Chuyên gia công nghệ với kinh nghiệm sâu rộng trong việc thiết kế và vận hành các hệ thống tự động hoá đa nền tảng, đảm bảo hạ tầng kỹ thuật ưu việt giúp bứt phá giới hạn cho các dịch vụ số."
+  },
+  "activities": {
+    "sub": "Hành trình & Văn hoá",
+    "title": "Hoạt động công ty",
+    "desc": "Kiến tạo môi trường làm việc năng động, sáng tạo và đầy nhiệt huyết, nơi mỗi cá nhân đều có cơ hội bứt phá và tỏa sáng.",
+    "items": {
+      "strategy": "Họp chiến lược nội dung",
+      "engagement": "Gắn kết đội ngũ",
+      "focus": "Môi trường làm việc tập trung",
+      "training": "Đào tạo chuyên môn",
+      "workshop": "Hội thảo bứt phá"
+    }
+  },
+  "partners_section": {
+    "title": "Đối tác chiến lược"
+  },
+  "contact_section": {
+    "sub": "Liên hệ",
+    "title": "Bạn đã sẵn sàng để bứt phá?",
+    "desc": "Hãy gửi tin nhắn hoặc gọi ngay cho chúng tôi để nhận được giải pháp tối ưu nhất cho doanh nghiệp của bạn.",
+    "email_label": "Email Official",
+    "phone_label": "Hotline 24/7",
+    "form_title": "Gửi lời nhắn",
+    "name_label": "Họ và tên",
+    "phone_field_label": "Số điện thoại",
+    "submit": "Gửi tin nhắn ngay"
+  },
+  "footer": {
+    "desc": "CÔNG TY CỔ PHẦN CÔNG NGHỆ H2V MEDIA — Kiến tạo giá trị số bền vững thông qua sáng tạo nội dung, tự động hoá và tiếp thị quốc tế.",
+    "categories": "Danh mục",
+    "contact": "Liên hệ",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "recruit_page": {
+    "sub": "Careers at H2V Media",
+    "title": "GIA NHẬP ĐỘI NGŨ",
+    "title_accent": "KIẾN TẠO TƯƠNG LAI",
+    "desc": "H2V Media luôn tìm kiếm những tài năng trẻ, khao khát khẳng định bản thân và cùng đưa trí tuệ Việt vươn tầm thế giới.",
+    "benefits_sub": "Lợi thế tại H2V",
+    "benefits_title": "Môi trường phát triển tài năng",
+    "benefits_items": {
+      "salary": {
+        "title": "Thu nhập hấp dẫn",
+        "desc": "Chế độ lương thưởng cạnh tranh, thưởng dự án, lễ tết và tháng 13."
+      },
+      "career": {
+        "title": "Lộ trình thăng tiến",
+        "desc": "Cơ hội đào tạo chuyên sâu và thăng tiến rõ ràng cho nhân sự tài năng."
+      },
+      "env": {
+        "title": "Môi trường năng động",
+        "desc": "Văn hóa trẻ trung, sáng tạo, đề cao giá trị cá nhân và sự gắn kết."
+      },
+      "policy": {
+        "title": "Chế độ đãi ngộ",
+        "desc": "Bảo hiểm đầy đủ, du lịch hàng năm và các phúc lợi hấp dẫn khác."
+      }
+    },
+    "jobs_sub": "Recruitment",
+    "jobs_title": "Vị trí đang chờ đợi bạn",
+    "job_detail": {
+      "sub": "Job Details",
+      "tasks": "Mô tả công việc",
+      "requirements": "Yêu cầu ứng viên",
+      "benefits": "Quyền lợi đãi ngộ",
+      "contact_title": "LIÊN HỆ NỘP HỒ SƠ",
+      "contact_desc": "Ứng viên quan tâm vui lòng gửi CV về email:",
+      "email_subject_desc": "Tiêu đề mail viết theo cấu trúc:",
+      "subject_structure": "Vị trí ứng tuyển_Họ và tên ứng viên",
+      "example_subject": "(VD: Biên dịch Kịch bản Video_ Nguyễn Văn A)",
+      "apply_now": "Nộp hồ sơ ngay"
+    }
+  },
+  "jobs": {
+    "common": {
+      "salary_plus": "Lương cứng + Thưởng",
+      "by_product": "Theo sản phẩm",
+      "view_detail": "Chi tiết công việc",
+      "location_hcm": "TP. Hồ Chí Minh",
+      "location_online_hcm": "Online / TP. Hồ Chí Minh",
+      "benefits": {
+        "fixed_salary": "Lương cứng + Phụ cấp gửi xe.",
+        "team_bonus": "Thưởng theo thành tích của Team.",
+        "holiday_bonus": "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
+        "equipment": "Được trang bị máy tính khi làm việc.",
+        "training": "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn."
+      }
+    },
+    "writer": {
+      "title": "Biên dịch Kịch bản Video (Việt - Anh)",
+      "desc": "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
+      "tasks": {
+        "0": "Biên dịch kịch bản video đảm bảo văn phong tự nhiên, chính xác.",
+        "1": "Phối hợp cùng team sản xuất để đảm bảo chất lượng nội dung.",
+        "2": "Theo dõi và cập nhật xu hướng ngôn ngữ quốc tế."
+      },
+      "reqs": {
+        "0": "Cẩn thận, tỉ mỉ, sắp xếp công việc hợp lý, khoa học. Có khả năng làm việc nhóm, độc lập.",
+        "1": "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên tại vị trí tương đương.",
+        "2": "Ưu tiên ứng viên Tốt nghiệp chuyên ngành Biên phiên dịch, thông thạo ngoại ngữ."
+      }
+    },
+    "editor": {
+      "title": "Video Editor Dựng phim",
+      "desc": "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh.",
+      "tasks": {
+        "0": "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng video theo cấu trúc kịch bản đã định.",
+        "1": "Thực hiện các thao tác xử lý hậu kỳ cơ bản (chỉnh màu, làm sạch âm thanh) trong Adobe Premiere Pro.",
+        "2": "Đảm bảo tiến độ và chất lượng video đầu ra."
+      },
+      "reqs": {
+        "0": "Thành thạo Capcut, Canva là một lợi thế.",
+        "1": "Có khả năng quản lý dự án tốt, làm việc cẩn thận, chi tiết và có trách nhiệm cao.",
+        "2": "Ưu tiên ứng viên có kinh nghiệm tối thiểu 1 năm làm Video Editor cho YouTube quốc tế."
+      }
+    },
+    "content": {
+      "title": "CTV Biên tập/Chỉnh sửa video",
+      "desc": "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản dự án.",
+      "tasks": {
+        "0": "Đảm bảo chất lượng chuyển cảnh, âm thanh, và hiệu ứng theo yêu cầu của từng dự án.",
+        "1": "Chỉnh sửa video dựa trên phản hồi từ bộ phận kiểm soát.",
+        "2": "Đáp ứng thời hạn giao sản phẩm."
+      },
+      "reqs": {
+        "0": "Có kỹ năng tốt về dựng phim, sử dụng thành thạo các phần mềm như Capcut, Canva.",
+        "1": "Chủ động về thời gian, đáp ứng được deadline của dự án.",
+        "2": "Ưu tiên ứng viên có kinh nghiệm làm video cho các kênh YouTube."
+      },
+      "benefits": {
+        "0": "Thu nhập tính theo sản phẩm/dự án với mức thù lao hấp dẫn.",
+        "1": "Thưởng bổ sung theo thành tích dự án/Team nếu đạt hiệu quả cao.",
+        "2": "Thời gian làm việc linh hoạt, không gò bó.",
+        "3": "Cơ hội trở thành nhân viên chính thức nếu hiệu quả xuất sắc."
+      }
+    }
+  }
+}

@@ -1,29 +1,37 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import logoLight from "@/assets/logo-globe-dark-removebg-preview.png";
 import logoDark from "@/assets/logo-globe-dark-removebg-preview.png";
 
-const homeLinks = [
-  { href: "#vct", label: "Về chúng tôi" },
-  { href: "#hst", label: "Hệ sinh thái" },
-  { href: "#vh", label: "Văn hóa" },
-  { href: "#dt", label: "Đối tác" },
-  { href: "#lh", label: "Liên hệ" },
-];
-
-const recruitLinks = [
-  { href: "#ut", label: "Ưu thế" },
-  { href: "#vt", label: "Vị trí tuyển dụng" },
-  { href: "#lh", label: "Liên hệ" },
-];
-
 export function SiteHeader() {
+  const { t, i18n } = useTranslation();
+  
+  const homeLinks = [
+    { href: "#vct", label: t("nav.about") },
+    { href: "#hst", label: t("nav.ecosystem") },
+    { href: "#vh", label: t("nav.culture") },
+    { href: "#dt", label: t("nav.partners") },
+    { href: "#lh", label: t("nav.contact") },
+  ];
+
+  const recruitLinks = [
+    { href: "#ut", label: t("nav.advantage") },
+    { href: "#vt", label: t("nav.job_positions") },
+    { href: "#lh", label: t("nav.contact") },
+  ];
+
   const isRecruit =
     typeof window !== "undefined" && window.location.pathname.startsWith("/tuyendung");
   const links = isRecruit ? recruitLinks : homeLinks;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const toggleLang = () => {
+    const newLang = i18n.language === "en" ? "vi" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -67,12 +75,25 @@ export function SiteHeader() {
               {l.label}
             </a>
           ))}
-          <a
-            href={isRecruit ? "#lh" : "/tuyendung"}
-            className="px-8 py-3.5 rounded-2xl bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95"
-          >
-            {isRecruit ? "Liên hệ ngay" : "Tuyển dụng"}
-          </a>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={toggleLang}
+              className={`flex items-center gap-2 text-[11px] font-black uppercase tracking-widest transition-all px-4 py-2 rounded-xl border ${
+                scrolled 
+                  ? "text-slate-600 border-slate-200 hover:bg-slate-50" 
+                  : "text-white/80 border-white/20 hover:bg-white/10"
+              }`}
+            >
+              <Globe size={14} />
+              {i18n.language === "en" ? "VN" : "EN"}
+            </button>
+            <a
+              href={isRecruit ? "#lh" : "/tuyendung"}
+              className="px-8 py-3.5 rounded-2xl bg-primary text-white text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-primary transition-all shadow-xl shadow-primary/20 active:scale-95"
+            >
+              {isRecruit ? t("nav.contact_now") : t("nav.recruit")}
+            </a>
+          </div>
         </nav>
 
         <button
@@ -103,13 +124,25 @@ export function SiteHeader() {
                   {l.label}
                 </a>
               ))}
-              <a
-                href={isRecruit ? "#lh" : "/tuyendung"}
-                onClick={() => setOpen(false)}
-                className="w-full py-5 rounded-[2rem] bg-primary text-white text-center text-sm font-black uppercase tracking-widest shadow-xl shadow-primary/20"
-              >
-                {isRecruit ? "Liên hệ ngay" : "Tuyển dụng"}
-              </a>
+              <div className="pt-4 flex flex-col gap-4">
+                <button
+                  onClick={() => {
+                    toggleLang();
+                    setOpen(false);
+                  }}
+                  className="w-full py-5 rounded-[2rem] border border-slate-200 text-foreground text-sm font-black uppercase tracking-widest flex items-center justify-center gap-3"
+                >
+                  <Globe size={18} className="text-primary" />
+                  {i18n.language === "en" ? "Vietnamese (VI)" : "English (EN)"}
+                </button>
+                <a
+                  href={isRecruit ? "#lh" : "/tuyendung"}
+                  onClick={() => setOpen(false)}
+                  className="w-full py-5 rounded-[2rem] bg-primary text-white text-center text-sm font-black uppercase tracking-widest shadow-xl shadow-primary/20"
+                >
+                  {isRecruit ? t("nav.contact_now") : t("nav.recruit")}
+                </a>
+              </div>
             </nav>
           </motion.div>
         )}

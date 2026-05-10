@@ -16,6 +16,7 @@ import {
   Zap,
   CheckCircle2,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -23,115 +24,6 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import jobVideo from "@/assets/jobs/video_real.png";
 import jobWriter from "@/assets/jobs/writer_real.png";
 import jobContent from "@/assets/jobs/content_real.png";
-
-const benefits = [
-  {
-    icon: Wallet,
-    title: "Thu nhập hấp dẫn",
-    desc: "Chế độ lương thưởng cạnh tranh, thưởng dự án, lễ tết và tháng 13.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Lộ trình thăng tiến",
-    desc: "Cơ hội đào tạo chuyên sâu và thăng tiến rõ ràng cho nhân sự tài năng.",
-  },
-  {
-    icon: Users,
-    title: "Môi trường năng động",
-    desc: "Văn hóa trẻ trung, sáng tạo, đề cao giá trị cá nhân và sự gắn kết.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Chế độ đãi ngộ",
-    desc: "Bảo hiểm đầy đủ, du lịch hàng năm và các phúc lợi hấp dẫn khác.",
-  },
-];
-
-const jobs = [
-  {
-    id: "writer",
-    title: "Biên dịch Kịch bản Video (Việt - Anh)",
-    desc: "Biên dịch các nội dung kịch bản cho video từ tiếng Việt sang tiếng Anh và các ngôn ngữ khác, đảm bảo văn phong phù hợp với từng quốc gia.",
-    img: jobWriter,
-    employmentType: "Fulltime",
-    location: "TP. Hồ Chí Minh",
-    compensation: "Lương cứng + Thưởng",
-    details: {
-      tasks: [
-        "Biên dịch kịch bản video đảm bảo văn phong tự nhiên, chính xác.",
-        "Phối hợp cùng team sản xuất để đảm bảo chất lượng nội dung.",
-        "Theo dõi và cập nhật xu hướng ngôn ngữ quốc tế."
-      ],
-      requirements: [
-        "Cẩn thận, tỉ mỉ, sắp xếp công việc hợp lý, khoa học. Có khả năng làm việc nhóm, độc lập.",
-        "Ưu tiên ứng viên có kinh nghiệm 01 năm trở lên tại vị trí tương đương.",
-        "Ưu tiên ứng viên Tốt nghiệp chuyên ngành Biên phiên dịch, thông thạo ngoại ngữ."
-      ],
-      benefits: [
-        "Lương cứng + Phụ cấp gửi xe.",
-        "Thưởng theo thành tích của Team.",
-        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
-        "Được trang bị máy tính khi làm việc.",
-        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn."
-      ]
-    },
-  },
-  {
-    id: "editor",
-    title: "Video Editor Dựng phim",
-    desc: "Chịu trách nhiệm chính về timeline, cắt ghép, chuyển cảnh mượt mà và đồng bộ hóa hình ảnh với âm thanh.",
-    img: jobVideo,
-    employmentType: "Fulltime",
-    location: "TP. Hồ Chí Minh",
-    compensation: "Lương cứng + Thưởng",
-    details: {
-      tasks: [
-        "Tiếp nhận tài liệu (kịch bản, footage, audio) và thực hiện dựng video theo cấu trúc kịch bản đã định.",
-        "Thực hiện các thao tác xử lý hậu kỳ cơ bản (chỉnh màu, làm sạch âm thanh) trong Adobe Premiere Pro.",
-        "Đảm bảo tiến độ và chất lượng video đầu ra."
-      ],
-      requirements: [
-        "Thành thạo Capcut, Canva là một lợi thế.",
-        "Có khả năng quản lý dự án tốt, làm việc cẩn thận, chi tiết và có trách nhiệm cao.",
-        "Ưu tiên ứng viên có kinh nghiệm tối thiểu 1 năm làm Video Editor cho YouTube quốc tế."
-      ],
-      benefits: [
-        "Lương cứng + Phụ cấp gửi xe.",
-        "Thưởng theo thành tích của Team.",
-        "Thưởng chung toàn công ty các dịp Lễ, Tết, sinh nhật nhân sự.",
-        "Được trang bị máy tính khi làm việc.",
-        "Tham gia các khóa đào tạo nội bộ, đào tạo bên ngoài về chuyên môn."
-      ]
-    },
-  },
-  {
-    id: "content",
-    title: "CTV Biên tập/Chỉnh sửa video",
-    desc: "Tiếp nhận tài liệu và thực hiện dựng, cắt, ghép video theo cấu trúc kịch bản dự án.",
-    img: jobContent,
-    employmentType: "Freelance/CTV",
-    location: "Online / TP. Hồ Chí Minh",
-    compensation: "Theo sản phẩm",
-    details: {
-      tasks: [
-        "Đảm bảo chất lượng chuyển cảnh, âm thanh, và hiệu ứng theo yêu cầu của từng dự án.",
-        "Chỉnh sửa video dựa trên phản hồi từ bộ phận kiểm soát.",
-        "Đáp ứng thời hạn giao sản phẩm."
-      ],
-      requirements: [
-        "Có kỹ năng tốt về dựng phim, sử dụng thành thạo các phần mềm như Capcut, Canva.",
-        "Chủ động về thời gian, đáp ứng được deadline của dự án.",
-        "Ưu tiên ứng viên có kinh nghiệm làm video cho các kênh YouTube."
-      ],
-      benefits: [
-        "Thu nhập tính theo sản phẩm/dự án với mức thù lao hấp dẫn.",
-        "Thưởng bổ sung theo thành tích dự án/Team nếu đạt hiệu quả cao.",
-        "Thời gian làm việc linh hoạt, không gò bó.",
-        "Cơ hội trở thành nhân viên chính thức nếu hiệu quả xuất sắc."
-      ]
-    },
-  },
-];
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <motion.div
@@ -145,6 +37,117 @@ const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 );
 
 export default function RecruitPage() {
+  const { t } = useTranslation();
+
+  const benefits = [
+    {
+      icon: Wallet,
+      title: t("recruit_page.benefits_items.salary.title"),
+      desc: t("recruit_page.benefits_items.salary.desc"),
+    },
+    {
+      icon: GraduationCap,
+      title: t("recruit_page.benefits_items.career.title"),
+      desc: t("recruit_page.benefits_items.career.desc"),
+    },
+    {
+      icon: Users,
+      title: t("recruit_page.benefits_items.env.title"),
+      desc: t("recruit_page.benefits_items.env.desc"),
+    },
+    {
+      icon: ShieldCheck,
+      title: t("recruit_page.benefits_items.policy.title"),
+      desc: t("recruit_page.benefits_items.policy.desc"),
+    },
+  ];
+
+  const jobs = [
+    {
+      id: "writer",
+      title: t("jobs.writer.title"),
+      desc: t("jobs.writer.desc"),
+      img: jobWriter,
+      employmentType: "Fulltime",
+      location: t("jobs.common.location_hcm"),
+      compensation: t("jobs.common.salary_plus"),
+      details: {
+        tasks: [
+          t("jobs.writer.tasks.0"),
+          t("jobs.writer.tasks.1"),
+          t("jobs.writer.tasks.2")
+        ],
+        requirements: [
+          t("jobs.writer.reqs.0"),
+          t("jobs.writer.reqs.1"),
+          t("jobs.writer.reqs.2")
+        ],
+        benefits: [
+          t("jobs.common.benefits.fixed_salary"),
+          t("jobs.common.benefits.team_bonus"),
+          t("jobs.common.benefits.holiday_bonus"),
+          t("jobs.common.benefits.equipment"),
+          t("jobs.common.benefits.training")
+        ]
+      },
+    },
+    {
+      id: "editor",
+      title: t("jobs.editor.title"),
+      desc: t("jobs.editor.desc"),
+      img: jobVideo,
+      employmentType: "Fulltime",
+      location: t("jobs.common.location_hcm"),
+      compensation: t("jobs.common.salary_plus"),
+      details: {
+        tasks: [
+          t("jobs.editor.tasks.0"),
+          t("jobs.editor.tasks.1"),
+          t("jobs.editor.tasks.2")
+        ],
+        requirements: [
+          t("jobs.editor.reqs.0"),
+          t("jobs.editor.reqs.1"),
+          t("jobs.editor.reqs.2")
+        ],
+        benefits: [
+          t("jobs.common.benefits.fixed_salary"),
+          t("jobs.common.benefits.team_bonus"),
+          t("jobs.common.benefits.holiday_bonus"),
+          t("jobs.common.benefits.equipment"),
+          t("jobs.common.benefits.training")
+        ]
+      },
+    },
+    {
+      id: "content",
+      title: t("jobs.content.title"),
+      desc: t("jobs.content.desc"),
+      img: jobContent,
+      employmentType: "Freelance/CTV",
+      location: t("jobs.common.location_online_hcm"),
+      compensation: t("jobs.common.by_product"),
+      details: {
+        tasks: [
+          t("jobs.content.tasks.0"),
+          t("jobs.content.tasks.1"),
+          t("jobs.content.tasks.2")
+        ],
+        requirements: [
+          t("jobs.content.reqs.0"),
+          t("jobs.content.reqs.1"),
+          t("jobs.content.reqs.2")
+        ],
+        benefits: [
+          t("jobs.content.benefits.0"),
+          t("jobs.content.benefits.1"),
+          t("jobs.content.benefits.2"),
+          t("jobs.content.benefits.3")
+        ]
+      },
+    },
+  ];
+
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[0] | null>(null);
 
   usePageMeta({
@@ -175,8 +178,8 @@ export default function RecruitPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl lg:text-7xl font-black leading-tight mb-12 tracking-tight"
             >
-              GIA NHẬP ĐỘI NGŨ <br />
-              <span className="text-primary italic">KIẾN TẠO TƯƠNG LAI</span>
+              {t("recruit_page.title")} <br />
+              <span className="text-primary italic">{t("recruit_page.title_accent")}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -184,7 +187,7 @@ export default function RecruitPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-white/70 mb-12 leading-relaxed max-w-2xl font-light"
             >
-              H2V Media luôn tìm kiếm những tài năng trẻ, khao khát khẳng định bản thân và cùng đưa trí tuệ Việt vươn tầm thế giới.
+              {t("recruit_page.desc")}
             </motion.p>
           </div>
         </div>
@@ -195,8 +198,8 @@ export default function RecruitPage() {
         <div className="container-tight">
           <FadeIn>
             <div className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Lợi thế tại H2V</span>
-              <h3 className="text-4xl lg:text-5xl font-black text-foreground">Môi trường phát triển tài năng</h3>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("recruit_page.benefits_sub")}</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground">{t("recruit_page.benefits_title")}</h3>
             </div>
           </FadeIn>
 
@@ -221,8 +224,8 @@ export default function RecruitPage() {
         <div className="container-tight">
           <FadeIn>
             <div className="text-center mb-24">
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">Recruitment</span>
-              <h3 className="text-4xl lg:text-5xl font-black text-foreground">Vị trí đang chờ đợi bạn</h3>
+              <span className="text-xs font-black uppercase tracking-[0.4em] text-primary mb-6 block">{t("recruit_page.jobs_sub")}</span>
+              <h3 className="text-4xl lg:text-5xl font-black text-foreground">{t("recruit_page.jobs_title")}</h3>
             </div>
           </FadeIn>
 
@@ -248,7 +251,7 @@ export default function RecruitPage() {
                     <h4 className="text-2xl font-bold mb-6 group-hover:text-primary transition-colors">{j.title}</h4>
                     <p className="text-sm text-slate-500 font-light mb-10 line-clamp-2 leading-relaxed">{j.desc}</p>
                     <div className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-slate-900 border-t border-slate-50 pt-8">
-                      Chi tiết công việc <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform text-primary" />
+                      {t("jobs.common.view_detail", { defaultValue: "Chi tiết công việc" })} <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform text-primary" />
                     </div>
                   </div>
                 </button>
@@ -294,7 +297,7 @@ export default function RecruitPage() {
                 <div className="space-y-12">
                   <section>
                     <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-8 flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center"><CheckCircle2 size={20} /></div> Mô tả công việc
+                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center"><CheckCircle2 size={20} /></div> {t("recruit_page.job_detail.tasks")}
                     </h4>
                     <ul className="space-y-4">
                       {selectedJob.details.tasks.map((t, idx) => (
@@ -306,7 +309,7 @@ export default function RecruitPage() {
                   </section>
                   <section>
                     <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-8 flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center"><CheckCircle2 size={20} /></div> Yêu cầu ứng viên
+                      <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center"><CheckCircle2 size={20} /></div> {t("recruit_page.job_detail.requirements")}
                     </h4>
                     <ul className="space-y-4">
                       {selectedJob.details.requirements.map((r, idx) => (
@@ -325,7 +328,7 @@ export default function RecruitPage() {
                 </div>
                 
                 <div className="relative z-10">
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-10">Quyền lợi đãi ngộ</h4>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-10">{t("recruit_page.job_detail.benefits")}</h4>
                   <ul className="space-y-6 mb-16">
                     {selectedJob.details.benefits.map((b, idx) => (
                       <li key={idx} className="text-base text-foreground font-bold flex items-center gap-6">
@@ -339,18 +342,18 @@ export default function RecruitPage() {
                 </div>
                 
                 <div className="relative z-10">
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-6">LIÊN HỆ NỘP HỒ SƠ</h4>
+                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-foreground mb-6">{t("recruit_page.job_detail.contact_title")}</h4>
                   <p className="text-[11px] text-slate-500 mb-8 leading-relaxed">
-                    Ứng viên quan tâm vui lòng gửi CV về email: <span className="text-primary font-bold">contact@h2vmedia.com</span><br /><br />
-                    Tiêu đề mail viết theo cấu trúc: <br />
-                    <span className="font-bold text-foreground">Vị trí ứng tuyển_Họ và tên ứng viên</span><br />
-                    (VD: Biên dịch Kịch bản Video_ Nguyễn Văn A)
+                    {t("recruit_page.job_detail.contact_desc")} <span className="text-primary font-bold">contact@h2vmedia.com</span><br /><br />
+                    {t("recruit_page.job_detail.email_subject_desc")} <br />
+                    <span className="font-bold text-foreground">{t("recruit_page.job_detail.subject_structure", { defaultValue: "Vị trí ứng tuyển_Họ và tên ứng viên" })}</span><br />
+                    {t("recruit_page.job_detail.example_subject")}
                   </p>
                   <a
                     href="mailto:contact@h2vmedia.com"
                     className="w-full py-6 rounded-[2rem] bg-primary text-white font-black uppercase tracking-widest text-sm text-center block hover:bg-blue-600 transition-all shadow-xl shadow-primary/20 active:scale-95"
                   >
-                    Nộp hồ sơ ngay
+                    {t("recruit_page.job_detail.apply_now")}
                   </a>
                 </div>
               </div>
