@@ -319,7 +319,7 @@ export default function RecruitPage() {
                 </div>
               </div>
 
-              <div className="lg:w-2/5 p-12 lg:p-20 bg-secondary flex flex-col justify-between relative">
+              <div className="lg:w-2/5 p-12 lg:p-20 bg-secondary flex flex-col relative overflow-y-auto">
                 <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
                   <Briefcase className="absolute -bottom-10 -right-10" size={300} />
                 </div>

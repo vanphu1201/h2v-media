@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoDark from "@/assets/logo-globe-dark.png";
+import logoDark from "@/assets/logo-globe-dark-removebg-preview.png";
 
 export function SiteFooter() {
   return (

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoLight from "@/assets/logo-globe-light.png";
-import logoDark from "@/assets/logo-globe-dark.png";
+import logoLight from "@/assets/logo-globe-dark-removebg-preview.png";
+import logoDark from "@/assets/logo-globe-dark-removebg-preview.png";
 
 const homeLinks = [
   { href: "#vct", label: "Về chúng tôi" },
@@ -39,14 +39,16 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-tight flex items-center justify-between">
-        <a href="/" className="flex items-center gap-4">
-          <img 
-            src={scrolled ? logoLight : logoDark} 
-            alt="H2V Logo" 
-            className={`w-12 h-12 object-contain ${scrolled ? "mix-blend-multiply" : "mix-blend-screen"}`} 
-            loading="eager"
-          />
-          <div className="flex flex-col leading-none">
+        <a href="/" className="flex items-center gap-4 group">
+          <div className="w-12 h-12 flex items-center justify-center relative">
+            <img 
+              src={scrolled ? logoLight : logoDark} 
+              alt="H2V Logo" 
+              className={`w-24 h-24 max-w-none object-contain absolute transition-transform duration-500 group-hover:scale-110 ${scrolled ? "mix-blend-multiply" : "mix-blend-screen"}`} 
+              loading="eager"
+            />
+          </div>
+          <div className="flex flex-col leading-none ml-8">
             <span className={`font-black text-2xl tracking-tighter ${scrolled ? "text-foreground" : "text-white"}`}>
               H2V <span className="text-primary italic">MEDIA</span>
             </span>

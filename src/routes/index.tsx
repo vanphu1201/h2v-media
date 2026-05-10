@@ -156,7 +156,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl lg:text-[5.5rem] font-black leading-[0.95] mb-8 tracking-tighter"
+              className="text-5xl lg:text-[5.5rem] font-black leading-[1.1] mb-8 tracking-tighter"
             >
               H2V MEDIA <br />
               <span className="text-primary italic">KIẾN TẠO GIÁ TRỊ SỐ</span>
