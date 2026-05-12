@@ -29,6 +29,7 @@ import ctoImg from "@/assets/leaders/cto.png";
 import ytImg from "@/assets/service-youtube.jpg";
 import autoImg from "@/assets/service-automation.jpg";
 import affImg from "@/assets/service-affiliate.jpg";
+import aboutStudioImg from "@/assets/about-studio.jpg";
 
 import ytLogo from "@/assets/partners/youtube.png";
 import metaLogo from "@/assets/partners/meta.png";
@@ -235,7 +236,7 @@ export default function HomePage() {
             <FadeIn delay={0.2}>
               <div className="relative">
                 <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
-                  <img src={ytImg} alt="Media Studio" className="w-full h-full object-cover" />
+                  <img src={aboutStudioImg} alt="Media Studio" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-10 -left-10 p-10 bg-white rounded-[2.5rem] shadow-2xl border border-slate-50 hidden md:block">
                   <div className="text-4xl font-black text-primary mb-1">10M+</div>
