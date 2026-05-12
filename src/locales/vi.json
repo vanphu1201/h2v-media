@@ -70,11 +70,13 @@
     "title": "Hoạt động công ty",
     "desc": "Kiến tạo môi trường làm việc năng động, sáng tạo và đầy nhiệt huyết, nơi mỗi cá nhân đều có cơ hội bứt phá và tỏa sáng.",
     "items": {
-      "strategy": "Họp chiến lược nội dung",
       "engagement": "Gắn kết đội ngũ",
       "focus": "Môi trường làm việc tập trung",
       "training": "Đào tạo chuyên môn",
-      "workshop": "Hội thảo bứt phá"
+      "workshop": "Hội thảo bứt phá",
+      "office_work": "Làm việc tại văn phòng",
+      "workspace": "Không gian sáng tạo",
+      "team_dinner": "Liên hoan đội ngũ"
     }
   },
   "partners_section": {

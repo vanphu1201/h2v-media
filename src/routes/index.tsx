@@ -35,11 +35,13 @@ import metaLogo from "@/assets/partners/meta.png";
 import googleLogo from "@/assets/partners/google_ads.png";
 import tiktokLogo from "@/assets/partners/tiktok.png";
 
-import activity1 from "@/assets/activities/activity_1.jpg";
 import activity2 from "@/assets/activities/activity_2.jpg";
 import activity3 from "@/assets/activities/activity_3.jpg";
 import activity4 from "@/assets/activities/activity_4.jpg";
 import activity5 from "@/assets/activities/activity_5.jpg";
+import activity6 from "@/assets/activities/activity_6.jpg";
+import activity7 from "@/assets/activities/activity_7.jpg";
+import activity8 from "@/assets/activities/activity_8.jpg";
 
 
 
@@ -127,11 +129,13 @@ export default function HomePage() {
   ];
 
   const companyActivities = [
-    { id: 1, img: activity1, title: t("activities.items.strategy") },
     { id: 2, img: activity2, title: t("activities.items.engagement") },
     { id: 3, img: activity3, title: t("activities.items.focus") },
     { id: 4, img: activity4, title: t("activities.items.training") },
     { id: 5, img: activity5, title: t("activities.items.workshop") },
+    { id: 6, img: activity6, title: t("activities.items.office_work") },
+    { id: 7, img: activity7, title: t("activities.items.workspace") },
+    { id: 8, img: activity8, title: t("activities.items.team_dinner") },
   ];
 
   usePageMeta({

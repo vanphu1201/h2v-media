@@ -70,11 +70,13 @@
     "title": "Company Activities",
     "desc": "Creating a dynamic, creative, and passionate working environment where every individual has the opportunity to break through and shine.",
     "items": {
-      "strategy": "Content Strategy Meeting",
       "engagement": "Team Engagement",
       "focus": "Focused Working Environment",
       "training": "Professional Training",
-      "workshop": "Breakthrough Workshop"
+      "workshop": "Breakthrough Workshop",
+      "office_work": "Office work",
+      "workspace": "Creative workspace",
+      "team_dinner": "Team dinner party"
     }
   },
   "partners_section": {
