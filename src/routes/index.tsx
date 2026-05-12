@@ -323,7 +323,7 @@ export default function HomePage() {
               <FadeIn key={member.name} delay={i * 0.1}>
                 <div className="group text-center">
                   <div className="relative aspect-square rounded-[3rem] overflow-hidden mb-10 bg-white goda-shadow">
-                    <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105" />
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top transition-all duration-1000 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <h4 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">{member.name}</h4>
